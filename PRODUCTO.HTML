@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Configurar Kit | RE-LAX</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="script.js"></script>
+</head>
+
+<body class="producto-body">
+
+<div class="configurador">
+
+<h2 id="nombreProducto"></h2>
+<p class="precio-base">Precio Base: $<span id="precioBase"></span></p>
+
+<h3>Incluye:</h3>
+<ul>
+<li>Minibotellas de licor</li>
+<li>Bebida en lata</li>
+<li>Burbujas explosivas</li>
+<li>Vaso domo 12 oz</li>
+<li>Pitillo</li>
+<li>Bolsa hermética</li>
+<li>Hielo listo</li>
+</ul>
+
+<h3>Agregar Extras</h3>
+
+<label><input type="checkbox" value="8000" class="extra"> Mini botella extra (+$8.000)</label>
+<label><input type="checkbox" value="5000" class="extra"> Lata adicional (+$5.000)</label>
+
+<h2>Total: $<span id="total"></span></h2>
+
+<button onclick="enviarPedido()" class="btn-pedir">
+Pedir por WhatsApp
+</button>
+
+</div>
+
+</body>
+</html>
