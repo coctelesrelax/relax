@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Re-Lax - Tù cóctel - Tú momento </title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="home-body">
+
+<section class="personalizar-hero">
+
+    <h1 class="marca">Cuando quiero salir de lo "clásico" o "normal"... esto es lo que necesito</h1>
+    <p class="frase-impacto">Elige tu cantidad y sabor</p>
+
+    <img id="imagenProducto" src="coctel-jager.jpg" class="producto-img">
+
+    <div class="bloque-personalizar">
+        <label>Cantidad</label>
+        <select id="cantidad">
+            <option value="S">1</option>
+            <option value="M">2</option>
+            <option value="L">3</option>
+            <option value="XL">4</option>
+        </select>
+    </div>
+
+    <div class="bloque-personalizar">
+        <label>sabor</label>
+        <select id="sabor" onchange="cambiarImagen()">
+            <option value="chivas">Chivas</option>
+            <option value="jager">Jager</option>
+            <option value="jonny">Jonny</option>
+            <option value="red label">Red Label</option>
+        </select>
+    </div>
+
+    <p class="precio-home">$35.000</p>
+    <p class="beneficios">Envíos a todo Colombia • Pago contra entrega</p>
+
+    <button onclick="enviarPedido()" class="btn-home">
+        Confirmar mi pedido
+    </button>
+
+</section>
+
+<script>
+function cambiarImagen() {
+    var color = document.getElementById("sabor").value;
+    var imagen = document.getElementById("imagenProducto");
+    imagen.src = "coctel-" + sabor + ".jpg";
+}
+
+function enviarPedido() {
+    var talla = document.getElementById("cantidad").value;
+    var color = document.getElementById("sabor").value;
+
+    var mensaje = "Hola Re-Lax, quiero mi cóctel personalizado de $35.000.%0A"
+                + "Cantidad: " + cantidad + "%0A"
+                + "Sabor: " + sabor;
+
+    window.location.href = "https://wa.me/573132659873?text=" + mensaje;
+}
+</script>
+
+</body>
+</html>
