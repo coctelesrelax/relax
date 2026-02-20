@@ -1,328 +1,115 @@
-/* =========================
-   RE-LAX NEON PREMIUM STYLE
-========================= */
-
-:root {
-    --neon-primary: #00f5ff;
-    --neon-secondary: #ff00c8;
-    --bg-dark: #0a0a0f;
-    --bg-section: #111118;
-    --text-soft: #cfcfe6;
-}
-
-body.home-body {
-    background-color: var(--bg-dark);
-    color: white;
-    font-family: 'Montserrat', sans-serif;
+body {
     margin: 0;
-    text-align: center;
-    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background: #0a0f1f;
+    color: white;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
-    position: relative;
-    height: 100vh;
-    background-image: url("coctel.chivas.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(circle at center, #111a35 0%, #050812 100%);
 }
 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+.logo {
+    width: 220px;
+    margin-bottom: 20px;
 }
 
-.contenido-hero {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    max-width: 800px;
-}
-
-/* LOGO NEON */
-
-.marca {
-    font-size: 48px;
-    font-weight: 900;
-    letter-spacing: 10px;
-    color: var(--neon-primary);
-    text-shadow:
-        0 0 5px var(--neon-primary),
-        0 0 10px var(--neon-primary),
-        0 0 20px var(--neon-primary),
-        0 0 40px rgba(0, 245, 255, 0.6);
-}
-
-/* FRASE */
-
-.frase-impacto {
-    margin-top: 30px;
-    font-size: 32px;
+.hero h1 {
     font-weight: 300;
-    color: white;
+    margin-bottom: 30px;
+    color: #00d9ff;
+    text-shadow: 0 0 15px #00d9ff;
 }
 
-.sub-frase {
-    margin-top: 15px;
-    font-size: 16px;
-    color: var(--text-soft);
-    letter-spacing: 1px;
-}
-
-.precio-home {
-    margin-top: 30px;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--neon-secondary);
-    text-shadow:
-        0 0 5px var(--neon-secondary),
-        0 0 15px var(--neon-secondary);
-}
-
-/* BOTONES NEON */
-
-.btn-home {
-    display: inline-block;
-    margin-top: 35px;
-    padding: 18px 60px;
-    background: transparent;
-    color: white;
-    font-weight: 700;
-    border-radius: 50px;
-    text-decoration: none;
-    letter-spacing: 2px;
-    border: 2px solid var(--neon-primary);
-    transition: 0.3s ease;
-    box-shadow:
-        0 0 10px var(--neon-primary),
-        inset 0 0 10px rgba(0,245,255,0.3);
-}
-
-.btn-home:hover {
-    background: var(--neon-primary);
+.btn-principal {
+    padding: 15px 35px;
+    background: #00d9ff;
     color: black;
-    box-shadow:
-        0 0 20px var(--neon-primary),
-        0 0 40px var(--neon-primary);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: 0.3s;
 }
 
-.btn-home.grande {
-    padding: 22px 80px;
-    font-size: 16px;
+.btn-principal:hover {
+    box-shadow: 0 0 20px #00d9ff;
 }
 
-.beneficios {
-    margin-top: 20px;
-    font-size: 14px;
-    opacity: 0.7;
+/* MENÚ */
+
+.menu {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
 }
 
-/* =========================
-   SECCIONES GENERALES
-========================= */
-
-section {
-    padding: 100px 20px;
-}
-
-h2 {
-    font-size: 28px;
-    letter-spacing: 4px;
+.menu h2 {
+    text-align: center;
     margin-bottom: 40px;
-    color: var(--neon-primary);
-    text-shadow: 0 0 10px rgba(0,245,255,0.6);
+    font-weight: 700;
+    color: #00d9ff;
+    text-shadow: 0 0 10px #00d9ff;
 }
 
-/* SOBRE */
-
-.sobre {
-    background: var(--bg-section);
+.producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111a35;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-.sobre p {
-    max-width: 700px;
-    margin: auto;
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--text-soft);
+.producto:hover {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
 }
 
-/* VIDEO */
-
-.video-section {
-    background: #0f0f17;
+.producto h3 {
+    margin: 0;
+    font-weight: 700;
 }
 
-.video-360 {
-    width: 90%;
-    max-width: 600px;
-    border-radius: 15px;
-    box-shadow:
-        0 0 15px rgba(0,245,255,0.3);
+.producto p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #aaa;
 }
 
-/* GALERÍA */
-
-.galeria {
-    background: var(--bg-dark);
+.precio {
+    font-size: 22px;
+    font-weight: 900;
+    color: #00d9ff;
 }
 
-.grid-galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: auto;
+.btn-wp {
+    padding: 10px 20px;
+    background: #00d9ff;
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
 }
 
-.grid-galeria img {
-    width: 100%;
-    border-radius: 15px;
-    transition: 0.4s ease;
-    box-shadow: 0 0 15px rgba(255,0,200,0.2);
-}
-
-.grid-galeria img:hover {
-    transform: scale(1.05);
-    box-shadow:
-        0 0 15px var(--neon-secondary),
-        0 0 40px rgba(255,0,200,0.6);
-}
-
-/* PARA QUIEN */
-
-.para-quien {
-    background: var(--bg-section);
-}
-
-.para-quien ul {
-    list-style: none;
-    padding: 0;
-}
-
-.para-quien li {
-    margin: 15px 0;
-    font-size: 18px;
-    color: var(--text-soft);
-}
-
-/* CTA FINAL */
-
-.cta-final {
-    background: #0f0f17;
-}
-
-.cta-final h2 {
-    font-size: 30px;
+.btn-wp:hover {
+    box-shadow: 0 0 15px #00d9ff;
 }
 
 /* FOOTER */
 
-.footer {
-    padding: 30px;
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #050812;
     font-size: 14px;
-    background: #050509;
-    opacity: 0.6;
 }
 
-/* =========================
-   ANIMACIÓN
-========================= */
-
-.fade-in {
-    animation: fadeIn 1.2s ease-out forwards;
-    opacity: 0;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-    .marca {
-        font-size: 36px;
-        letter-spacing: 6px;
-    }
-
-    .frase-impacto {
-        font-size: 24px;
-    }
-
-    .precio-home {
-        font-size: 26px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-}
-/* =========================
-   WHATSAPP FLOAT NEON
-========================= */
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: transparent;
-    color: white;
-    border: 2px solid #00f5ff;
-    padding: 15px 22px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow:
-        0 0 10px #00f5ff,
-        0 0 25px rgba(0,245,255,0.6);
-    transition: 0.3s ease;
-    z-index: 999;
-}
-
-.whatsapp-float:hover {
-    background: #00f5ff;
-    color: black;
-    box-shadow:
-        0 0 25px #00f5ff,
-        0 0 50px #00f5ff;
-}
-/* =========================
-   LOGO HERO ELEGANTE
-========================= */
-
-.logo-principal {
-    width: 320px;
-    max-width: 80%;
-    margin-bottom: 30px;
-    filter: drop-shadow(0 0 15px rgba(0,245,255,0.5));
-    transition: 0.4s ease;
-}
-
-.logo-principal:hover {
-    filter: drop-shadow(0 0 25px rgba(0,245,255,0.8));
-    transform: scale(1.02);
-}
-
-/* Ajuste hero más minimalista */
-
-.hero {
-    background-position: center;
-}
-
-.overlay {
-    background: radial-gradient(circle at center, rgba(0,0,0,0.6), rgba(0,0,0,0.95));
+.legal {
+    margin-top: 10px;
+    color: #666;
 }
