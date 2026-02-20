@@ -1,0 +1,202 @@
+body.home-body {
+    background-color: #0e0e0e;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url("coctel.chivas.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.contenido-hero {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.marca {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 8px;
+}
+
+.frase-impacto {
+    margin-top: 20px;
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.precio-home {
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.btn-home {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 18px 60px;
+    background: white;
+    color: black;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.btn-home:hover {
+    background: #d6d6d6;
+}
+
+.btn-home.grande {
+    margin-top: 40px;
+    padding: 20px 70px;
+}
+
+.beneficios {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* VIDEO */
+
+.video-section {
+    padding: 80px 20px;
+    background: #111;
+}
+
+.video-section h2 {
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.video-360 {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* GALERÍA */
+
+.galeria {
+    padding: 80px 20px;
+    background: #0e0e0e;
+}
+
+.galeria h2 {
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.grid-galeria img {
+    width: 100%;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.grid-galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* CTA FINAL */
+
+.cta-final {
+    padding: 100px 20px;
+    background: #111;
+}
+
+.cta-final h2 {
+    font-size: 26px;
+    letter-spacing: 3px;
+}
+
+/* ANIMACIÓN */
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* PERSONALIZAR */
+.personalizar-hero {
+    padding: 60px 20px;
+    background: #0e0e0e;
+}
+
+.producto-img {
+    width: 300px;
+    margin: 40px auto;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.bloque-personalizar {
+    margin: 20px 0;
+}
+
+.bloque-personalizar label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.bloque-personalizar select {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.btn-home {
+    margin-top: 30px;
+    padding: 16px 50px;
+    background: white;
+    color: black;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-home:hover {
+    background: #d6d6d6;
+}
