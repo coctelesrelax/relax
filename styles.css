@@ -1,115 +1,233 @@
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #0a0f1f;
-    color: white;
+/* ===== RESET ===== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* HERO */
-
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: radial-gradient(circle at center, #111a35 0%, #050812 100%);
+body{
+font-family:'Montserrat', sans-serif;
+color:white;
+background:#050816;
+overflow-x:hidden;
 }
 
-.logo {
-    width: 220px;
-    margin-bottom: 20px;
+/* ===== FONDO TIPO BAR ===== */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:url("bar-fondo.jpg") center/cover no-repeat;
+filter:blur(8px) brightness(0.4);
+z-index:-2;
 }
 
-.hero h1 {
-    font-weight: 300;
-    margin-bottom: 30px;
-    color: #00d9ff;
-    text-shadow: 0 0 15px #00d9ff;
+body::after{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(180deg,#040716,#071433 60%,#050816);
+z-index:-1;
 }
 
-.btn-principal {
-    padding: 15px 35px;
-    background: #00d9ff;
-    color: black;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 30px;
-    transition: 0.3s;
+/* ===== HEADER ===== */
+.header{
+text-align:center;
+padding:60px 20px 40px 20px;
 }
 
-.btn-principal:hover {
-    box-shadow: 0 0 20px #00d9ff;
+.header h1{
+font-size:48px;
+font-weight:900;
+letter-spacing:8px;
+color:#00bfff;
+text-shadow:
+0 0 5px #00bfff,
+0 0 15px #00bfff,
+0 0 30px #0077ff;
+animation: glow 2s ease-in-out infinite alternate;
 }
 
-/* MENÚ */
-
-.menu {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
+@keyframes glow{
+from{ text-shadow:0 0 5px #00bfff,0 0 15px #00bfff;}
+to{ text-shadow:0 0 20px #00bfff,0 0 40px #0077ff;}
 }
 
-.menu h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: 700;
-    color: #00d9ff;
-    text-shadow: 0 0 10px #00d9ff;
+.slogan{
+margin-top:15px;
+font-weight:300;
+opacity:0.85;
+letter-spacing:2px;
 }
 
-.producto {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #111a35;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    transition: 0.3s;
+.envio{
+margin-top:15px;
+color:#00bfff;
+font-weight:600;
 }
 
-.producto:hover {
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+/* ===== CATÁLOGO ===== */
+.catalogo{
+padding:40px 8%;
 }
 
-.producto h3 {
-    margin: 0;
-    font-weight: 700;
+h2{
+margin-top:60px;
+margin-bottom:30px;
+color:#00bfff;
+font-weight:700;
+letter-spacing:3px;
+text-transform:uppercase;
 }
 
-.producto p {
-    margin: 5px 0 0 0;
-    font-size: 14px;
-    color: #aaa;
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
-.precio {
-    font-size: 22px;
-    font-weight: 900;
-    color: #00d9ff;
+/* ===== TARJETAS PREMIUM ===== */
+.card{
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(15px);
+border:1px solid rgba(255,255,255,0.1);
+padding:25px;
+border-radius:20px;
+text-align:center;
+text-decoration:none;
+color:white;
+transition:0.4s ease;
+position:relative;
+overflow:hidden;
 }
 
-.btn-wp {
-    padding: 10px 20px;
-    background: #00d9ff;
-    color: black;
-    text-decoration: none;
-    border-radius: 20px;
-    font-weight: 600;
+.card::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background: radial-gradient(circle,#00bfff55,transparent 70%);
+transform:rotate(25deg);
+opacity:0;
+transition:0.5s;
 }
 
-.btn-wp:hover {
-    box-shadow: 0 0 15px #00d9ff;
+.card:hover::before{
+opacity:1;
 }
 
-/* FOOTER */
-
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    background: #050812;
-    font-size: 14px;
+.card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 0 25px #00bfff;
 }
 
-.legal {
-    margin-top: 10px;
-    color: #666;
+.card img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+.card h3{
+margin-bottom:10px;
+font-weight:600;
+}
+
+.card p{
+font-weight:700;
+color:#00bfff;
+}
+
+/* ===== CONFIGURADOR ===== */
+.producto-body{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:40px;
+}
+
+.configurador{
+width:100%;
+max-width:650px;
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(20px);
+padding:40px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 0 40px rgba(0,191,255,0.3);
+animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.configurador h2{
+margin-bottom:15px;
+}
+
+.precio-base{
+margin-bottom:20px;
+font-weight:600;
+}
+
+ul{
+margin-bottom:25px;
+line-height:1.8;
+opacity:0.9;
+}
+
+label{
+display:block;
+margin:12px 0;
+cursor:pointer;
+}
+
+input[type="checkbox"]{
+margin-right:10px;
+}
+
+/* ===== BOTÓN WHATSAPP ===== */
+.btn-pedir{
+margin-top:25px;
+background: linear-gradient(45deg,#00bfff,#0077ff);
+border:none;
+padding:18px;
+font-weight:700;
+cursor:pointer;
+border-radius:12px;
+width:100%;
+color:white;
+font-size:16px;
+transition:0.3s;
+}
+
+.btn-pedir:hover{
+box-shadow:0 0 25px #00bfff;
+transform:scale(1.03);
+}
+
+/* ===== BOTÓN FLOTANTE ===== */
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+background: linear-gradient(45deg,#00bfff,#0077ff);
+color:white;
+padding:18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 0 20px #00bfff;
+transition:0.3s;
+}
+
+.whatsapp-float:hover{
+transform:scale(1.1);
 }
