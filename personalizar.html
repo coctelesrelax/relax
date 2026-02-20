@@ -46,14 +46,14 @@
 
 <script>
 function cambiarImagen() {
-    var color = document.getElementById("sabor").value;
+    var coctel = document.getElementById("sabor").value;
     var imagen = document.getElementById("imagenProducto");
     imagen.src = "coctel-" + sabor + ".jpg";
 }
 
 function enviarPedido() {
-    var talla = document.getElementById("cantidad").value;
-    var color = document.getElementById("sabor").value;
+    var cantidad = document.getElementById("cantidad").value;
+    var coctel = document.getElementById("sabor").value;
 
     var mensaje = "Hola Re-Lax, quiero mi cóctel personalizado de $35.000.%0A"
                 + "Cantidad: " + cantidad + "%0A"
