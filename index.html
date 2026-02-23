@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-LAX</title>
+<link rel="stylesheet" href="styles.css">
 
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
+  color:white;
+  text-align:center;
+}
+
+/* ===== CARTEL NEÓN ===== */
+.cartel{
+  font-size:60px;
+  margin-top:40px;
+  color:#00f0ff;
+  text-shadow:
+    0 0 5px #00f0ff,
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff,
+    0 0 40px #00f0ff;
+  animation:flicker 2s infinite alternate;
+}
+
+@keyframes flicker{
+  0%{opacity:1;}
+  5%{opacity:0.8;}
+  10%{opacity:1;}
+  15%{opacity:0.6;}
+  20%{opacity:1;}
+  100%{opacity:1;}
+}
+
+/* ===== GRID PRODUCTOS ===== */
+#productos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:40px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  border-radius:20px;
+  padding:20px;
+  transition:0.4s;
+  border:1px solid rgba(0,255,255,0.2);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px #00f0ff;
+}
+
+.card img{
+  width:100%;
+  border-radius:15px;
+}
+
+/* BOTÓN */
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:#00f0ff;
+  color:black;
+  cursor:pointer;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:15px;
+  border-radius:50%;
+  font-size:22px;
+  color:white;
+  text-decoration:none;
+  box-shadow:0 0 15px #25D366;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="cartel">RE-LAX</h1>
+
+<div id="productos"></div>
+
+<a href="https://wa.me/573132659873" class="whatsapp" target="_blank">💬</a>
+
+<script src="script.js"></script>
+</body>
+</html>
