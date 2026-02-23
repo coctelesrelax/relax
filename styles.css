@@ -146,3 +146,34 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 0 25px #00f0ff;
 }
+/* ===== LOGO PRINCIPAL ===== */
+.logo-principal{
+  width:300px;
+  max-width:80%;
+  margin-top:60px;
+  filter:
+    drop-shadow(0 0 8px #00f0ff)
+    drop-shadow(0 0 20px #00f0ff)
+    drop-shadow(0 0 40px #00f0ff);
+  animation:logoPulse 3s ease-in-out infinite alternate;
+  transition:0.4s;
+}
+
+.logo-principal:hover{
+  transform:scale(1.08);
+}
+
+@keyframes logoPulse{
+  from{
+    filter:
+      drop-shadow(0 0 5px #00f0ff)
+      drop-shadow(0 0 15px #00f0ff)
+      drop-shadow(0 0 25px #00f0ff);
+  }
+  to{
+    filter:
+      drop-shadow(0 0 10px #00f0ff)
+      drop-shadow(0 0 30px #00f0ff)
+      drop-shadow(0 0 60px #00f0ff);
+  }
+}
