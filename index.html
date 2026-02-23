@@ -123,22 +123,33 @@ button{
   <img src="img/logo.png" class="logo-reflejo" alt="">
 </div>
 
-<button class="music-btn" onclick="toggleMusic()">🎵 Música</button>
+<button id="musicBtn" class="music-btn">🔊 ULTRA MODE</button>
+
+<audio id="bgMusic" loop>
+  <source src="audio/ultra-club.mp3" type="audio/mpeg">
+</audio>
 
 <div id="productos"></div>
 
 <a href="https://wa.me/573132659873" class="whatsapp" target="_blank">💬</a>
 
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2023/03/07/audio_6d38f8b1f6.mp3" type="audio/mp3">
-</audio> 
-
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2023/03/07/audio_6d38f8b1f6.mp3" type="audio/mp3">
-</audio> 
-
 <script src="data.js"></script>
 <script src="script.js"></script>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+btn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    btn.innerText = "⛔ STOP PARTY";
+  } else {
+    music.pause();
+    btn.innerText = "🔊 ULTRA MODE";
+  }
+});
+</script>
 
 </body>
 </html>
