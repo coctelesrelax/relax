@@ -146,34 +146,70 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 0 25px #00f0ff;
 }
-/* ===== LOGO PRINCIPAL ===== */
-.logo-principal{
-  width:300px;
-  max-width:80%;
+/* ===== ULTRA CLUB LOGO ===== */
+
+.logo-wrapper{
+  position:relative;
   margin-top:60px;
+  display:inline-block;
+}
+
+/* ENCENDIDO */
+.logo-principal{
+  width:320px;
+  max-width:85%;
+  opacity:0;
+  animation:
+    logoBoot 1.5s ease forwards,
+    logoGlow 3s ease-in-out infinite alternate 1.5s;
   filter:
-    drop-shadow(0 0 8px #00f0ff)
-    drop-shadow(0 0 20px #00f0ff)
-    drop-shadow(0 0 40px #00f0ff);
-  animation:logoPulse 3s ease-in-out infinite alternate;
-  transition:0.4s;
+    drop-shadow(0 0 5px #00f0ff)
+    drop-shadow(0 0 15px #00f0ff);
 }
 
-.logo-principal:hover{
-  transform:scale(1.08);
+/* REFLEJO */
+.logo-reflejo{
+  width:320px;
+  max-width:85%;
+  position:absolute;
+  top:100%;
+  left:0;
+  transform:scaleY(-1);
+  opacity:0.15;
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+  -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+  pointer-events:none;
 }
 
-@keyframes logoPulse{
+/* ENCENDIDO INICIAL */
+@keyframes logoBoot{
+  0%{
+    opacity:0;
+    transform:scale(0.8);
+    filter:none;
+  }
+  60%{
+    opacity:1;
+    transform:scale(1.05);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+/* RESPIRACIÓN NEÓN */
+@keyframes logoGlow{
   from{
     filter:
-      drop-shadow(0 0 5px #00f0ff)
-      drop-shadow(0 0 15px #00f0ff)
-      drop-shadow(0 0 25px #00f0ff);
+      drop-shadow(0 0 10px #00f0ff)
+      drop-shadow(0 0 25px #00f0ff)
+      drop-shadow(0 0 40px #00f0ff);
   }
   to{
     filter:
-      drop-shadow(0 0 10px #00f0ff)
-      drop-shadow(0 0 30px #00f0ff)
-      drop-shadow(0 0 60px #00f0ff);
+      drop-shadow(0 0 20px #00f0ff)
+      drop-shadow(0 0 50px #00f0ff)
+      drop-shadow(0 0 80px #00f0ff);
   }
 }
