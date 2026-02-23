@@ -55,4 +55,4 @@ const productos = [
     imagen: "img/cuates-grants.jpg",
     descripcion: "1 Minibotella Whisky Grant’s + Lata Cuate + Burbujas + Hielo"
   }
-  ];
+ ];
