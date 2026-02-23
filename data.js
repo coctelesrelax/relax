@@ -54,22 +54,22 @@ const productos = [
     precio: 23000,
     imagen: "img/cuates-grants.jpg",
     descripcion: "1 Minibotella Whisky Grant’s + Lata Cuate + Burbujas + Hielo"
-  }
+  },
   {
     id: "hechizo-violeta",
     nombre: "Hechizo - Violeta",
     precio: 40.000,
     imagen: "img/hechizo-violeta.jpg",
     descripcion: "1 Minibotella Ginebra whitley + Mini botella Vodka absolut + Lata Monster morado + Burbujas + Hielo"
-  }
-{
+  },
+  {
     id: "perla-negra",
     nombre: "Perla - Negra",
     precio: 29.000,
     imagen: "img/perla-negra.jpg",
     descripcion: "1 Minibotella Jägermaster + Mini botella Vodka absolut + Lata Monster + Burbujas + Hielo"
-  }
-{
+  },
+  {
     id: "tormenta-azul",
     nombre: "Tormenta - Azul",
     precio: 30.000,
