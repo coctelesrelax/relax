@@ -44,13 +44,19 @@ if(document.getElementById("detalle")){
 
 /* ===== MÚSICA ===== */
 
-window.toggleMusic = function(){
-  const music = document.getElementById("bgMusic");
-  if(music.paused){
-    music.play();
-  }else{
-    music.pause();
-  }
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+if(btn && music){
+  btn.addEventListener("click", function(){
+    if(music.paused){
+      music.play();
+      btn.innerText = "⛔ STOP PARTY";
+    }else{
+      music.pause();
+      btn.innerText = "🔊 ULTRA MODE";
+    }
+  });
 }
 
 /* ===== PARTÍCULAS ===== */
