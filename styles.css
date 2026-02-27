@@ -214,3 +214,90 @@ body {
   }
 }
  
+/* ===== FONDO NIGHT CLUB ===== */
+body.producto{
+  margin:0;
+  height:100vh;
+  background:url("img/fondo-producto.jpg") no-repeat center center fixed;
+  background-size:cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Arial, sans-serif;
+}
+
+/* ===== TARIMA ===== */
+.stage{
+  position:relative;
+  padding:40px;
+  border-radius:20px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(8px);
+  box-shadow:0 0 80px #ff00ff;
+}
+
+/* ===== CARD CENTRAL ===== */
+.card{
+  text-align:center;
+  color:white;
+  padding:30px;
+  border-radius:20px;
+  border:2px solid #00f0ff;
+  box-shadow:0 0 40px #00f0ff, 0 0 80px #ff00ff inset;
+  animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from{box-shadow:0 0 20px #00f0ff;}
+  to{box-shadow:0 0 60px #ff00ff;}
+}
+
+.producto-img{
+  width:220px;
+  margin-bottom:20px;
+}
+
+.sub{
+  color:#ff00ff;
+  font-style:italic;
+}
+
+.info p{
+  margin:5px 0;
+  font-size:14px;
+  opacity:0.9;
+}
+
+.price{
+  font-size:40px;
+  color:#00f0ff;
+  margin:20px 0;
+}
+
+/* ===== BOTÓN NEON ===== */
+.btn-buy{
+  display:inline-block;
+  padding:15px 40px;
+  background:linear-gradient(90deg,#ff00ff,#00f0ff);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:50px;
+  box-shadow:0 0 20px #ff00ff;
+  transition:0.3s;
+}
+
+.btn-buy:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 40px #00f0ff;
+}
+
+/* ===== BOTÓN VOLVER ===== */
+.btn-back{
+  position:absolute;
+  top:20px;
+  left:20px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
