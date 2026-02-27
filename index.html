@@ -136,20 +136,5 @@ button{
 <script src="data.js"></script>
 <script src="script.js"></script>
 
-<script>
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
-btn.addEventListener("click", () => {
-  if (music.paused) {
-    music.play();
-    btn.innerText = "⛔ STOP PARTY";
-  } else {
-    music.pause();
-    btn.innerText = "🔊 ULTRA MODE";
-  }
-});
-</script>
-
 </body>
 </html>
