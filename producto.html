@@ -3,123 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RE-LAX Ultra Night Club</title>
+<title>RE-LAX | Producto</title>
 
-<style>
+<link rel="stylesheet" href="styles.css">
 
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:url("img/fondo-producto.jpg") center/cover no-repeat fixed;
-  color:white;
-  overflow:hidden;
-}
+<!-- Fuente Night Club -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-/* Capa oscura ligera */
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.25);
-}
-
-/* Botón volver */
-.back{
-  position:absolute;
-  top:30px;
-  left:40px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  z-index:5;
-}
-
-/* Contenedor central */
-.content{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:480px;
-  text-align:center;
-  z-index:10;
-}
-
-/* Imagen producto */
-.content img{
-  width:220px;
-  margin-bottom:20px;
-}
-
-/* Nombre */
-.content h2{
-  font-size:26px;
-  margin:10px 0;
-  color:white;
-}
-
-/* Descripción */
-.content p{
-  font-size:14px;
-  opacity:0.9;
-  margin:5px 0;
-}
-
-/* Precio */
-.price{
-  font-size:38px;
-  margin:25px 0;
-  color:#00f0ff;
-  text-shadow:0 0 20px #00f0ff;
-}
-
-/* Botón */
-.buy{
-  display:inline-block;
-  padding:15px 45px;
-  border-radius:40px;
-  background:linear-gradient(90deg,#ff00ff,#00f0ff);
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:18px;
-  box-shadow:0 0 25px #ff00ff;
-  transition:0.3s;
-}
-
-.buy:hover{
-  transform:scale(1.05);
-}
-
-</style>
 </head>
+<body class="producto-page">
 
-<body>
+<!-- BOTÓN ATRÁS -->
+<a href="index.html" class="btn-back">⬅ ATRÁS</a>
 
-<a href="index.html" class="back">← VOLVER</a>
+<div class="producto-container">
 
-<div class="content" id="detalle"></div>
+    <!-- IMAGEN -->
+    <div class="producto-img-container">
+        <img id="producto-img" src="">
+    </div>
+
+    <!-- INFO SUPERIOR (AZUL) -->
+    <div class="producto-info">
+        <h1 id="producto-nombre"></h1>
+        <p id="producto-descripcion"></p>
+        <h2 id="producto-precio"></h2>
+    </div>
+
+    <!-- INFO INFERIOR (VERDE) -->
+    <div class="info-extra">
+        <p class="beneficios">
+            🚀 Entrega Express <br>
+            💵 Pago Contraentrega
+        </p>
+
+        <a id="btn-whatsapp" target="_blank" class="btn-pedir">
+            PEDIR AHORA
+        </a>
+    </div>
+
+</div>
 
 <script src="data.js"></script>
 <script src="script.js"></script>
-
-<script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-const producto = productos.find(p=>p.id===id);
-
-if(producto){
-  document.getElementById("detalle").innerHTML = `
-    <img src="${producto.imagen}">
-    <h2>${producto.nombre}</h2>
-    <p>${producto.descripcion}</p>
-    <div class="price">$${producto.precio.toLocaleString()}</div>
-    <a class="buy" href="https://wa.me/573132659873?text=Hola quiero pedir ${producto.nombre}">
-      PEDIR AHORA 🍸
-    </a>
-  `;
-}
-</script>
 
 </body>
 </html>
