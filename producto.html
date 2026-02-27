@@ -2,8 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ultra Night Club - RE-LAX</title>
+<title>Producto RE-LAX</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,30 +12,46 @@
 
 <div class="smoke-overlay"></div>
 
-<div class="stage-container">
-
-  <div class="neon-card">
-
-    <img src="img/producto.png" class="producto-img">
-
-    <h1 class="titulo">NOMBRE DEL PRODUCTO</h1>
-    <p class="subtitulo">Edición Exclusiva</p>
-
-    <div class="includes">
-      <p>✔ Minibotella Premium</p>
-      <p>✔ Bebida Energética</p>
-      <p>✔ Hielo & Burbujas</p>
-    </div>
-
-    <div class="price">$17.500</div>
-
-    <a href="https://wa.me/573132659873" target="_blank" class="btn-neon">
-      PEDIR AHORA 🍸
-    </a>
-
-  </div>
-
+<div id="product-container" class="stage-container">
+  <!-- Aquí se inyecta -->
 </div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  const producto = productos.find(p => p.id === id);
+
+  if (!producto) return;
+
+  document.getElementById("product-container").innerHTML = `
+    <div class="neon-card">
+
+      <img src="${producto.imagen}" class="producto-img">
+
+      <h1 class="titulo">${producto.nombre}</h1>
+      <p class="subtitulo">Edición Ultra Night Club</p>
+
+      <div class="includes">
+        <p>✔ ${producto.descripcion.split(" + ").join("</p><p>✔ ")}</p>
+      </div>
+
+      <div class="price">$${producto.precio.toLocaleString()}</div>
+
+      <a href="https://wa.me/573132659873?text=Hola quiero pedir ${producto.nombre}" 
+         target="_blank" class="btn-neon">
+        PEDIR AHORA 🍸
+      </a>
+
+    </div>
+  `;
+});
+</script>
 
 </body>
 </html>
