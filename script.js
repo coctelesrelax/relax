@@ -53,6 +53,13 @@ window.toggleMusic = function(){
   }
 }
 
+<button id="musicBtn" class="music-btn">🔊 ULTRA MODE</button>
+
+<audio id="bgMusic" preload="auto">
+  <source src="audio/ultra-club.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
+  
 /* ===== PARTÍCULAS ===== */
 
 const canvas = document.getElementById("particles");
