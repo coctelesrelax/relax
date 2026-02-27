@@ -301,3 +301,136 @@ body.producto{
   text-decoration:none;
   font-weight:bold;
 }
+
+/* ===== FONDO ULTRA NIGHT CLUB ===== */
+.ultra-bg{
+  margin:0;
+  height:100vh;
+  background:url("img/fondo-producto.jpg") no-repeat center center fixed;
+  background-size:cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Arial, sans-serif;
+  overflow:hidden;
+  position:relative;
+}
+
+/* HUMO */
+.smoke-overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:url("https://i.imgur.com/8bKQXcP.png");
+  background-size:cover;
+  opacity:0.08;
+  animation:smokeMove 80s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes smokeMove{
+  from{background-position:0 0;}
+  to{background-position:2000px 0;}
+}
+
+/* CONTENEDOR TARIMA */
+.stage-container{
+  position:relative;
+  padding:60px;
+  border-radius:30px;
+  background:radial-gradient(circle at center, rgba(0,0,0,0.8), rgba(0,0,0,0.95));
+  box-shadow:
+    0 0 60px #ff00ff,
+    0 0 120px #00f0ff,
+    inset 0 0 60px #ff00ff;
+}
+
+/* CARD NEON */
+.neon-card{
+  text-align:center;
+  color:white;
+  padding:40px;
+  border-radius:25px;
+  border:2px solid #00f0ff;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.5);
+  box-shadow:
+    0 0 40px #00f0ff,
+    0 0 80px #ff00ff inset;
+  animation:glowCard 2s infinite alternate;
+}
+
+@keyframes glowCard{
+  from{box-shadow:0 0 30px #00f0ff;}
+  to{box-shadow:0 0 80px #ff00ff;}
+}
+
+/* IMAGEN */
+.producto-img{
+  width:250px;
+  margin-bottom:20px;
+  filter:drop-shadow(0 0 20px #00f0ff);
+}
+
+/* TITULOS */
+.titulo{
+  font-size:32px;
+  color:#00f0ff;
+  text-shadow:0 0 20px #00f0ff;
+}
+
+.subtitulo{
+  color:#ff00ff;
+  font-style:italic;
+  margin-bottom:20px;
+  text-shadow:0 0 15px #ff00ff;
+}
+
+/* LISTA */
+.includes p{
+  margin:6px 0;
+  opacity:0.9;
+}
+
+/* PRECIO */
+.price{
+  font-size:42px;
+  margin:25px 0;
+  color:#00f0ff;
+  text-shadow:
+    0 0 10px #00f0ff,
+    0 0 30px #00f0ff;
+}
+
+/* BOTÓN NEON */
+.btn-neon{
+  display:inline-block;
+  padding:15px 50px;
+  background:linear-gradient(90deg,#ff00ff,#00f0ff);
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:50px;
+  box-shadow:
+    0 0 20px #ff00ff,
+    0 0 40px #00f0ff;
+  transition:0.3s;
+}
+
+.btn-neon:hover{
+  transform:scale(1.1);
+  box-shadow:
+    0 0 40px #00f0ff,
+    0 0 80px #ff00ff;
+}
+
+/* BOTÓN VOLVER */
+.btn-back{
+  position:absolute;
+  top:25px;
+  left:25px;
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  text-shadow:0 0 10px #00f0ff;
+}
