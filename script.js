@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-/* ===== PRODUCTOS ===== */
+/* =========================================
+   PRODUCTOS – PÁGINA PRINCIPAL
+========================================= */
 
 if(document.getElementById("productos")){
   const contenedor = document.getElementById("productos");
@@ -8,7 +10,7 @@ if(document.getElementById("productos")){
   productos.forEach(p=>{
     contenedor.innerHTML += `
       <div class="card">
-        <img src="${p.imagen}">
+        <img src="${p.imagen}" alt="${p.nombre}">
         <h3>${p.nombre}</h3>
         <p>${p.descripcion}</p>
         <h4>$${p.precio.toLocaleString()}</h4>
@@ -18,50 +20,45 @@ if(document.getElementById("productos")){
   });
 }
 
+/* =========================================
+   FUNCIÓN REDIRECCIÓN
+========================================= */
+
 window.verProducto = function(id){
   window.location.href = "producto.html?id=" + id;
 }
 
-/* ===== DETALLE PRODUCTO ===== */
+/* =========================================
+   DETALLE PRODUCTO – PÁGINA 2
+========================================= */
 
 if(document.getElementById("detalle")){
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
-  const producto = productos.find(p=>p.id===id);
+
+  const producto = productos.find(p=>p.id === id);
 
   if(producto){
     document.getElementById("detalle").innerHTML = `
-      <img src="${producto.imagen}">
+      <img src="${producto.imagenDetalle || producto.imagen}" alt="${producto.nombre}">
       <h2>${producto.nombre}</h2>
       <p>${producto.descripcion}</p>
       <h3>$${producto.precio.toLocaleString()}</h3>
-      <a href="https://wa.me/573132659873?text=Hola quiero pedir ${producto.nombre}">
+      <a href="https://wa.me/573132659873?text=Hola quiero pedir ${encodeURIComponent(producto.nombre)}">
         <button>Pedir por WhatsApp</button>
       </a>
+      <br><br>
+      <button onclick="window.history.back()">⬅ Volver</button>
     `;
   }
 }
 
-/* ===== MÚSICA ===== */
-
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
-if(btn && music){
-  btn.addEventListener("click", function(){
-    if(music.paused){
-      music.play();
-      btn.innerText = "⛔ STOP PARTY";
-    }else{
-      music.pause();
-      btn.innerText = "🔊 ULTRA MODE";
-    }
-  });
-}
-
-/* ===== PARTÍCULAS ===== */
+/* =========================================
+   PARTÍCULAS (SOLO SI EXISTE CANVAS)
+========================================= */
 
 const canvas = document.getElementById("particles");
+
 if(canvas){
   const ctx = canvas.getContext("2d");
 
@@ -93,6 +90,7 @@ if(canvas){
   }
 
   function init(){
+    particlesArray = [];
     for(let i=0;i<100;i++){
       particlesArray.push(new Particle());
     }
