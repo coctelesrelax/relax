@@ -2,56 +2,135 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Producto RE-LAX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-LAX Ultra Night Club</title>
+
 <link rel="stylesheet" href="styles.css">
+
+<style>
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:url("img/fondo-nightclub.jpg") center/cover no-repeat fixed;
+  color:white;
+  overflow:hidden;
+}
+
+/* Overlay oscuro */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(4px);
+}
+
+/* Botón volver */
+.back{
+  position:absolute;
+  top:30px;
+  left:30px;
+  z-index:10;
+  text-decoration:none;
+  color:#00f0ff;
+  font-weight:bold;
+  font-size:18px;
+}
+
+/* ESCENARIO */
+.scene{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+/* TARJETA CENTRAL */
+.poster{
+  position:relative;
+  width:420px;
+  padding:40px;
+  border-radius:25px;
+  background:rgba(0,0,0,0.85);
+  border:2px solid #00f0ff;
+  box-shadow:
+    0 0 20px #00f0ff,
+    0 0 60px #ff00ff;
+  text-align:center;
+  z-index:5;
+}
+
+/* Imagen producto */
+.poster img{
+  width:100%;
+  border-radius:20px;
+  margin-bottom:20px;
+  box-shadow:0 0 25px #00f0ff;
+}
+
+.poster h2{
+  font-size:28px;
+  color:#00f0ff;
+  margin:10px 0;
+}
+
+.poster p{
+  opacity:0.85;
+  font-size:14px;
+}
+
+.price{
+  font-size:32px;
+  margin:20px 0;
+  color:#00f0ff;
+  text-shadow:0 0 20px #00f0ff;
+}
+
+.buy{
+  display:inline-block;
+  padding:15px 35px;
+  border-radius:40px;
+  background:linear-gradient(90deg,#ff00ff,#00f0ff);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 0 30px #ff00ff;
+  transition:0.3s;
+}
+
+.buy:hover{
+  transform:scale(1.05);
+}
+
+/* Plataforma falsa */
+.platform{
+  position:absolute;
+  bottom:150px;
+  width:500px;
+  height:80px;
+  background:radial-gradient(circle,#ff00ff33,#00000000);
+  border-radius:50%;
+  filter:blur(20px);
+  z-index:2;
+}
+
+</style>
 </head>
 
-<body class="ultra-bg">
+<body>
 
-<a href="index.html" class="btn-back">← VOLVER</a>
+<a href="index.html" class="back">← VOLVER</a>
 
-<div class="smoke-overlay"></div>
+<div class="scene">
+  <div class="platform"></div>
 
-<div id="product-container" class="stage-container">
-  <!-- Aquí se inyecta -->
+  <div class="poster" id="detalle"></div>
 </div>
 
 <script src="data.js"></script>
 <script src="script.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-
-  const producto = productos.find(p => p.id === id);
-
-  if (!producto) return;
-
-  document.getElementById("product-container").innerHTML = `
-    <div class="neon-card">
-
-      <img src="${producto.imagen}" class="producto-img">
-
-      <h1 class="titulo">${producto.nombre}</h1>
-      <p class="subtitulo">Edición Ultra Night Club</p>
-
-      <div class="includes">
-        <p>✔ ${producto.descripcion.split(" + ").join("</p><p>✔ ")}</p>
-      </div>
-
-      <div class="price">$${producto.precio.toLocaleString()}</div>
-
-      <a href="https://wa.me/573132659873?text=Hola quiero pedir ${producto.nombre}" 
-         target="_blank" class="btn-neon">
-        PEDIR AHORA 🍸
-      </a>
-
-    </div>
-  `;
-});
-</script>
 
 </body>
 </html>
