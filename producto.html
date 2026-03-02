@@ -12,31 +12,32 @@ body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
   background:url("img/fondo-producto.jpg") center/cover no-repeat fixed;
-  position:relative;
   min-height:100vh;
   color:white;
   text-align:center;
+  position:relative;
 }
 
-/* OSCURECER FONDO */
+/* Oscurecer fondo SIN crear caja */
 body::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.6);
-  z-index:-1;
+  background:rgba(0,0,0,0.45);
+  z-index:0;
 }
 
 .producto-container{
+  position:relative;
+  z-index:1;
   width:100%;
   max-width:450px;
   margin:auto;
-  position:relative;
   height:100vh;
 }
 
-/* 🔵 IMAGEN (CUADRO AZUL) */
-.producto-img-container{
+/* 🔵 IMAGEN */
+.producto-img-box{
   position:absolute;
   top:12%;
   left:50%;
@@ -44,13 +45,13 @@ body::before{
   width:260px;
 }
 
-.producto-img-container img{
+.producto-img-box img{
   width:100%;
   object-fit:contain;
   filter:drop-shadow(0 0 25px #00f0ff);
 }
 
-/* 🟢 NOMBRE + DESCRIPCIÓN + PRECIO (CUADRO VERDE) */
+/* 🟢 INFO */
 .producto-info{
   position:absolute;
   top:48%;
@@ -70,17 +71,14 @@ body::before{
 .producto-info p{
   font-size:15px;
   margin:8px 0;
-  text-shadow:0 0 8px rgba(255,255,255,0.7);
 }
 
 .producto-info h2{
   font-size:28px;
   color:#00ffcc;
-  text-shadow:0 0 12px #00ffcc;
-  margin-top:10px;
 }
 
-/* 🟣 BOTÓN PEDIR (CUADRO FUCSIA) */
+/* 🟣 BOTÓN */
 .pedir-box{
   position:absolute;
   top:72%;
@@ -97,15 +95,9 @@ body::before{
   text-decoration:none;
   font-size:17px;
   box-shadow:0 0 20px #ff00cc;
-  transition:0.3s;
 }
 
-.btn-pedir:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 35px #ff00cc;
-}
-
-/* BENEFICIOS ABAJO */
+/* BENEFICIOS */
 .beneficios{
   position:absolute;
   top:82%;
@@ -113,7 +105,6 @@ body::before{
   transform:translateX(-50%);
   font-size:15px;
   opacity:0.9;
-  text-shadow:0 0 10px #00f0ff;
 }
 
 /* BOTÓN ATRÁS */
@@ -127,36 +118,33 @@ body::before{
   border-radius:20px;
   text-decoration:none;
   font-weight:bold;
+  z-index:2;
 }
 </style>
 </head>
 
-<body>
+<body class="producto-clean">
 
 <a href="index.html" class="btn-back">⬅ ATRÁS</a>
 
 <div class="producto-container">
 
-  <!-- 🔵 IMAGEN -->
-  <div class="producto-img-container">
+  <div class="producto-img-box">
     <img id="producto-imagen">
   </div>
 
-  <!-- 🟢 INFO -->
   <div class="producto-info">
     <h1 id="producto-nombre"></h1>
     <p id="producto-descripcion"></p>
     <h2 id="producto-precio"></h2>
   </div>
 
-  <!-- 🟣 PEDIR -->
   <div class="pedir-box">
     <a id="btn-whatsapp" target="_blank" class="btn-pedir">
       PEDIR AHORA
     </a>
   </div>
 
-  <!-- BENEFICIOS -->
   <p class="beneficios">
     🚀 Entrega Express <br>
     💵 Pago Contraentrega
