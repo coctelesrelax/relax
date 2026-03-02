@@ -6,149 +6,36 @@
 <title>RE-LAX Producto</title>
 
 <link rel="stylesheet" href="styles.css">
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:url("img/fondo-producto.jpg") center/cover no-repeat fixed;
-  min-height:100vh;
-  color:white;
-  text-align:center;
-  position:relative;
-}
-
-/* Oscurecer fondo SIN crear caja */
-body::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-  z-index:0;
-}
-
-.producto-container{
-  position:relative;
-  z-index:1;
-  width:100%;
-  max-width:450px;
-  margin:auto;
-  height:100vh;
-}
-
-/* 🔵 IMAGEN */
-.producto-img-box{
-  position:absolute;
-  top:12%;
-  left:50%;
-  transform:translateX(-50%);
-  width:260px;
-}
-
-.producto-img-box img{
-  width:100%;
-  object-fit:contain;
-  filter:drop-shadow(0 0 25px #00f0ff);
-}
-
-/* 🟢 INFO */
-.producto-info{
-  position:absolute;
-  top:48%;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  max-width:380px;
-}
-
-.producto-info h1{
-  margin:0;
-  font-size:26px;
-  color:#00f0ff;
-  text-shadow:0 0 10px #00f0ff;
-}
-
-.producto-info p{
-  font-size:15px;
-  margin:8px 0;
-}
-
-.producto-info h2{
-  font-size:28px;
-  color:#00ffcc;
-}
-
-/* 🟣 BOTÓN */
-.pedir-box{
-  position:absolute;
-  top:72%;
-  left:50%;
-  transform:translateX(-50%);
-}
-
-.btn-pedir{
-  padding:14px 45px;
-  background:linear-gradient(90deg,#ff00cc,#ff0099);
-  color:white;
-  font-weight:bold;
-  border-radius:40px;
-  text-decoration:none;
-  font-size:17px;
-  box-shadow:0 0 20px #ff00cc;
-}
-
-/* BENEFICIOS */
-.beneficios{
-  position:absolute;
-  top:82%;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:15px;
-  opacity:0.9;
-}
-
-/* BOTÓN ATRÁS */
-.btn-back{
-  position:absolute;
-  top:20px;
-  left:20px;
-  background:#00f0ff;
-  color:black;
-  padding:8px 15px;
-  border-radius:20px;
-  text-decoration:none;
-  font-weight:bold;
-  z-index:2;
-}
-</style>
 </head>
 
-<body class="producto-clean">
+<body class="producto-page">
 
 <a href="index.html" class="btn-back">⬅ ATRÁS</a>
 
 <div class="producto-container">
 
-  <div class="producto-img-box">
-    <img id="producto-imagen">
+  <!-- IMAGEN -->
+  <div class="producto-img-container">
+    <img id="producto-imagen" alt="Producto RE-LAX">
   </div>
 
+  <!-- INFORMACIÓN -->
   <div class="producto-info">
     <h1 id="producto-nombre"></h1>
     <p id="producto-descripcion"></p>
     <h2 id="producto-precio"></h2>
-  </div>
 
-  <div class="pedir-box">
+    <!-- BOTÓN PEDIR -->
     <a id="btn-whatsapp" target="_blank" class="btn-pedir">
       PEDIR AHORA
     </a>
-  </div>
 
-  <p class="beneficios">
-    🚀 Entrega Express <br>
-    💵 Pago Contraentrega
-  </p>
+    <!-- ENTREGA Y PAGO -->
+    <p class="beneficios">
+      🚀 Entrega Express <br>
+      💵 Pago Contraentrega
+    </p>
+  </div>
 
 </div>
 
