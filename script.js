@@ -29,46 +29,61 @@ window.verProducto = function(id){
 }
 
 /* =========================================
-   DETALLE PRODUCTO – PÁGINA 2
+   DETALLE PRODUCTO – NUEVA ESTRUCTURA
 ========================================= */
 
-if(document.getElementById("detalle")){
+if(document.getElementById("producto-nombre")){
+
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
 
-  const producto = productos.find(p=>p.id === id);
+  const producto = productos.find(p => p.id === id);
 
   if(producto){
-    document.getElementById("detalle").innerHTML = `
-      <img src="${producto.imagenDetalle || producto.imagen}" alt="${producto.nombre}">
-      <h2>${producto.nombre}</h2>
-      <p>${producto.descripcion}</p>
-      <h3>$${producto.precio.toLocaleString()}</h3>
-      <a href="https://wa.me/573132659873?text=Hola quiero pedir ${encodeURIComponent(producto.nombre)}">
-        <button>Pedir por WhatsApp</button>
-      </a>
-      <br><br>
-      <button onclick="window.history.back()">⬅ Volver</button>
-    `;
+
+    // Imagen
+    document.getElementById("producto-imagen").src =
+      producto.imagenDetalle || producto.imagen;
+
+    document.getElementById("producto-imagen").alt =
+      producto.nombre;
+
+    // Nombre
+    document.getElementById("producto-nombre").textContent =
+      producto.nombre;
+
+    // Descripción
+    document.getElementById("producto-descripcion").textContent =
+      producto.descripcion;
+
+    // Precio
+    document.getElementById("producto-precio").textContent =
+      "$" + producto.precio.toLocaleString();
+
+    // Botón WhatsApp
+    document.getElementById("btn-whatsapp").href =
+      "https://wa.me/573132659873?text=" +
+      encodeURIComponent("Hola, quiero pedir " + producto.nombre + " 🚀");
   }
 }
 
 /* =========================================
-   PARTÍCULAS (SOLO SI EXISTE CANVAS)
+   PARTÍCULAS (SOLO INDEX)
 ========================================= */
 
 const canvas = document.getElementById("particles");
 
 if(canvas){
+
   const ctx = canvas.getContext("2d");
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
 
   let particlesArray = [];
 
