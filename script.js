@@ -64,6 +64,11 @@ if(canvas){
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
 
   let particlesArray = [];
 
@@ -91,7 +96,7 @@ if(canvas){
 
   function init(){
     particlesArray = [];
-    for(let i=0;i<100;i++){
+    for(let i=0;i<40;i++){
       particlesArray.push(new Particle());
     }
   }
