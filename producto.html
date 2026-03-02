@@ -13,7 +13,6 @@ body{
   font-family:Arial, Helvetica, sans-serif;
   background:url("img/fondo-producto.jpg") center/cover no-repeat fixed;
   position:relative;
-  overflow:hidden;
   min-height:100vh;
   color:white;
   text-align:center;
@@ -33,12 +32,13 @@ body::before{
   max-width:450px;
   margin:auto;
   position:relative;
+  height:100vh;
 }
 
-/* ===== POSICIONAR IMAGEN EN CUADRO AZUL ===== */
+/* 🔵 IMAGEN (CUADRO AZUL) */
 .producto-img-container{
   position:absolute;
-  top:12%; /* Ajusta aquí para ubicar en tu cuadro azul */
+  top:12%;
   left:50%;
   transform:translateX(-50%);
   width:260px;
@@ -50,10 +50,10 @@ body::before{
   filter:drop-shadow(0 0 25px #00f0ff);
 }
 
-/* ===== POSICIONAR TEXTO EN CUADRO VERDE ===== */
+/* 🟢 NOMBRE + DESCRIPCIÓN + PRECIO (CUADRO VERDE) */
 .producto-info{
   position:absolute;
-  top:48%; /* Ajusta aquí según tu fondo */
+  top:48%;
   left:50%;
   transform:translateX(-50%);
   width:90%;
@@ -77,12 +77,13 @@ body::before{
   font-size:28px;
   color:#00ffcc;
   text-shadow:0 0 12px #00ffcc;
+  margin-top:10px;
 }
 
-/* ===== POSICIONAR BOTÓN EN CUADRO FUCSIA ===== */
+/* 🟣 BOTÓN PEDIR (CUADRO FUCSIA) */
 .pedir-box{
   position:absolute;
-  top:72%; /* Ajusta aquí según tu fondo */
+  top:72%;
   left:50%;
   transform:translateX(-50%);
 }
@@ -104,10 +105,10 @@ body::before{
   box-shadow:0 0 35px #ff00cc;
 }
 
-/* ===== ENTREGA Y PAGO DEBAJO ===== */
+/* BENEFICIOS ABAJO */
 .beneficios{
   position:absolute;
-  top:82%; /* Ajusta aquí para colocarlo justo abajo */
+  top:82%;
   left:50%;
   transform:translateX(-50%);
   font-size:15px;
@@ -137,7 +138,7 @@ body::before{
 <div class="producto-container">
 
   <!-- 🔵 IMAGEN -->
-  <div class="producto-img-box">
+  <div class="producto-img-container">
     <img id="producto-imagen">
   </div>
 
