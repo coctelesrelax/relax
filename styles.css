@@ -494,3 +494,50 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 15px #00ffff;
 }
+
+/* =========================================
+   ESTILO TARJETA PRODUCTO
+========================================= */
+
+#detalle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.producto-card {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,255,255,0.4);
+  max-width: 420px;
+}
+
+.producto-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.btn-wsp {
+  background: linear-gradient(45deg, #00ffff, #00ff88);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-volver {
+  background: transparent;
+  border: 1px solid #00ffff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
