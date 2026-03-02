@@ -32,14 +32,14 @@ window.verProducto = function(id){
    DETALLE PRODUCTO – NUEVA ESTRUCTURA
 ========================================= */
 
-if(document.getElementById("producto")){
+if(document.getElementById("productos")){
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
 
   const producto = productos.find(p=>p.id === id);
 
   if(producto){
-    document.getElementById("producto").innerHTML = `
+    document.getElementById("productos").innerHTML = `
       <div class="producto-card">
         <img src="${producto.imagenDetalle || producto.imagen}" alt="${producto.nombre}">
         <h2>${producto.nombre}</h2>
