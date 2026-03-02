@@ -12,114 +12,112 @@ body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
   background:url("img/fondo-producto.jpg") center/cover no-repeat fixed;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  color:white;
+  position:relative;
   overflow:hidden;
+  min-height:100vh;
+  color:white;
+  text-align:center;
 }
 
-/* Oscurecer fondo elegante */
+/* OSCURECER FONDO */
 body::before{
   content:"";
-  position:fixed;
+  position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.55);
+  background:rgba(0,0,0,0.6);
   z-index:-1;
 }
 
-/* CONTENEDOR CENTRAL */
 .producto-container{
   width:100%;
-  max-width:420px;
-  text-align:center;
+  max-width:450px;
+  margin:auto;
   position:relative;
 }
 
-/* 🔵 IMAGEN */
-.producto-img-box{
-  margin-bottom:30px;
+/* ===== POSICIONAR IMAGEN EN CUADRO AZUL ===== */
+.producto-img-container{
+  position:absolute;
+  top:12%; /* Ajusta aquí para ubicar en tu cuadro azul */
+  left:50%;
+  transform:translateX(-50%);
+  width:260px;
 }
 
-.producto-img-box img{
-  width:260px;
-  max-width:90%;
-  display:block;
-  margin:auto;
+.producto-img-container img{
+  width:100%;
+  object-fit:contain;
   filter:drop-shadow(0 0 25px #00f0ff);
 }
 
-/* 🟢 INFORMACIÓN */
+/* ===== POSICIONAR TEXTO EN CUADRO VERDE ===== */
 .producto-info{
-  margin-bottom:25px;
+  position:absolute;
+  top:48%; /* Ajusta aquí según tu fondo */
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:380px;
 }
 
 .producto-info h1{
-  margin:0 0 10px 0;
+  margin:0;
   font-size:26px;
   color:#00f0ff;
-  text-shadow:
-    0 0 10px #00f0ff,
-    0 0 25px #00f0ff;
+  text-shadow:0 0 10px #00f0ff;
 }
 
 .producto-info p{
   font-size:15px;
-  margin-bottom:12px;
-  color:#ffffff;
-  text-shadow:0 0 10px rgba(255,255,255,0.5);
+  margin:8px 0;
+  text-shadow:0 0 8px rgba(255,255,255,0.7);
 }
 
 .producto-info h2{
-  margin:0;
-  font-size:32px;
+  font-size:28px;
   color:#00ffcc;
-  text-shadow:
-    0 0 15px #00ffcc,
-    0 0 30px #00ffcc;
+  text-shadow:0 0 12px #00ffcc;
 }
 
-/* 🟣 BOTÓN */
+/* ===== POSICIONAR BOTÓN EN CUADRO FUCSIA ===== */
 .pedir-box{
-  margin-bottom:20px;
+  position:absolute;
+  top:72%; /* Ajusta aquí según tu fondo */
+  left:50%;
+  transform:translateX(-50%);
 }
 
 .btn-pedir{
-  display:inline-block;
-  padding:16px 50px;
-  border-radius:40px;
+  padding:14px 45px;
   background:linear-gradient(90deg,#ff00cc,#ff0099);
   color:white;
   font-weight:bold;
+  border-radius:40px;
   text-decoration:none;
   font-size:17px;
-  box-shadow:
-    0 0 20px #ff00cc,
-    0 0 40px #ff0099;
+  box-shadow:0 0 20px #ff00cc;
   transition:0.3s;
 }
 
 .btn-pedir:hover{
   transform:scale(1.08);
-  box-shadow:
-    0 0 40px #ff00cc,
-    0 0 60px #ff0099;
+  box-shadow:0 0 35px #ff00cc;
 }
 
-/* 🚀 ENTREGA Y PAGO */
+/* ===== ENTREGA Y PAGO DEBAJO ===== */
 .beneficios{
-  font-weight:bold;
+  position:absolute;
+  top:82%; /* Ajusta aquí para colocarlo justo abajo */
+  left:50%;
+  transform:translateX(-50%);
   font-size:15px;
-  color:#ffffff;
-  text-shadow:
-    0 0 10px #00f0ff,
-    0 0 20px #00f0ff;
+  opacity:0.9;
+  text-shadow:0 0 10px #00f0ff;
 }
 
 /* BOTÓN ATRÁS */
 .btn-back{
-  position:fixed;
+  position:absolute;
   top:20px;
   left:20px;
   background:#00f0ff;
