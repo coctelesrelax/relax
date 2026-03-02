@@ -19,7 +19,7 @@ body{
   color:white;
 }
 
-/* OSCURECER FONDO */
+/* Oscurecer fondo */
 body::before{
   content:"";
   position:fixed;
@@ -30,35 +30,41 @@ body::before{
 
 .producto-container{
   width:90%;
-  max-width:500px;
+  max-width:450px;
   text-align:center;
 }
 
-.producto-img-container{
-  margin-bottom:20px;
-}
-
-.producto-img-container img{
-  width:100%;
-  max-width:300px;
-  border-radius:20px;
-  box-shadow:0 0 30px #00f0ff;
-}
-
-/* CUADRO AZUL */
-.producto-info{
+/* 🔵 CUADRO AZUL - IMAGEN */
+.producto-img-box{
   background:rgba(0, 180, 255, 0.15);
   backdrop-filter:blur(15px);
   padding:25px;
-  border-radius:20px;
+  border-radius:25px;
   border:1px solid rgba(0,255,255,0.4);
-  margin-bottom:15px;
+  margin-bottom:20px;
+}
+
+.producto-img-box img{
+  width:100%;
+  max-width:260px;
+  border-radius:20px;
+  box-shadow:0 0 25px #00f0ff;
+}
+
+/* 🟢 CUADRO VERDE - INFO */
+.producto-info{
+  background:rgba(0,255,120,0.15);
+  backdrop-filter:blur(15px);
+  padding:25px;
+  border-radius:25px;
+  border:1px solid rgba(0,255,150,0.4);
+  margin-bottom:20px;
 }
 
 .producto-info h1{
   margin:0 0 10px 0;
-  font-size:26px;
-  color:#00f0ff;
+  font-size:24px;
+  color:#00ffcc;
 }
 
 .producto-info p{
@@ -68,38 +74,46 @@ body::before{
 
 .producto-info h2{
   margin:0;
-  font-size:24px;
+  font-size:26px;
+  color:#ffffff;
 }
 
-/* CUADRO VERDE */
-.info-extra{
-  background:rgba(0,255,120,0.15);
+/* 🟣 CUADRO FUCSIA - BOTÓN */
+.pedir-box{
+  background:rgba(255,0,150,0.15);
   backdrop-filter:blur(15px);
   padding:20px;
-  border-radius:20px;
-  border:1px solid rgba(0,255,150,0.4);
-}
-
-.beneficios{
+  border-radius:25px;
+  border:1px solid rgba(255,0,200,0.4);
   margin-bottom:15px;
-  font-weight:bold;
 }
 
 .btn-pedir{
   display:inline-block;
-  padding:12px 25px;
-  border-radius:25px;
-  background:#00f0ff;
-  color:black;
+  padding:14px 40px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#ff00cc,#ff0099);
+  color:white;
   font-weight:bold;
   text-decoration:none;
+  font-size:16px;
+  box-shadow:0 0 20px #ff00cc;
+  transition:0.3s;
 }
 
 .btn-pedir:hover{
-  background:#00c8d8;
+  transform:scale(1.05);
+  box-shadow:0 0 35px #ff00cc;
 }
 
-/* BOTÓN ATRÁS */
+/* Entrega y pago */
+.beneficios{
+  font-weight:bold;
+  font-size:14px;
+  opacity:0.9;
+}
+
+/* Botón atrás */
 .btn-back{
   position:fixed;
   top:20px;
@@ -119,30 +133,36 @@ body::before{
 <a href="index.html" class="btn-back">⬅ ATRÁS</a>
 
 <div class="producto-container">
-  <div class="producto-img-container">
+
+  <!-- 🔵 IMAGEN -->
+  <div class="producto-img-box">
     <img id="producto-imagen">
   </div>
 
+  <!-- 🟢 INFO -->
   <div class="producto-info">
     <h1 id="producto-nombre"></h1>
     <p id="producto-descripcion"></p>
     <h2 id="producto-precio"></h2>
   </div>
 
-  <div class="info-extra">
-    <p class="beneficios">
-      🚀 Entrega Express <br>
-      💵 Pago Contraentrega
-    </p>
-
+  <!-- 🟣 PEDIR -->
+  <div class="pedir-box">
     <a id="btn-whatsapp" target="_blank" class="btn-pedir">
       PEDIR AHORA
     </a>
   </div>
+
+  <!-- BENEFICIOS -->
+  <p class="beneficios">
+    🚀 Entrega Express <br>
+    💵 Pago Contraentrega
+  </p>
+
 </div>
 
 <script src="data.js"></script>
 <script src="script.js"></script>
 
-<body class="producto-page">
+</body>
 </html>
