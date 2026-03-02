@@ -15,105 +15,109 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  min-height:100vh;
+  height:100vh;
   color:white;
+  overflow:hidden;
 }
 
-/* Oscurecer fondo */
+/* Oscurecer fondo elegante */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.65);
+  background:rgba(0,0,0,0.55);
   z-index:-1;
 }
 
+/* CONTENEDOR CENTRAL */
 .producto-container{
-  width:90%;
-  max-width:450px;
+  width:100%;
+  max-width:420px;
   text-align:center;
+  position:relative;
 }
 
-/* 🔵 CUADRO AZUL - IMAGEN */
+/* 🔵 IMAGEN */
 .producto-img-box{
-  background:rgba(0, 180, 255, 0.15);
-  backdrop-filter:blur(15px);
-  padding:25px;
-  border-radius:25px;
-  border:1px solid rgba(0,255,255,0.4);
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 
 .producto-img-box img{
-  width:100%;
-  max-width:260px;
-  border-radius:20px;
-  box-shadow:0 0 25px #00f0ff;
+  width:260px;
+  max-width:90%;
+  display:block;
+  margin:auto;
+  filter:drop-shadow(0 0 25px #00f0ff);
 }
 
-/* 🟢 CUADRO VERDE - INFO */
+/* 🟢 INFORMACIÓN */
 .producto-info{
-  background:rgba(0,255,120,0.15);
-  backdrop-filter:blur(15px);
-  padding:25px;
-  border-radius:25px;
-  border:1px solid rgba(0,255,150,0.4);
-  margin-bottom:20px;
+  margin-bottom:25px;
 }
 
 .producto-info h1{
   margin:0 0 10px 0;
-  font-size:24px;
-  color:#00ffcc;
+  font-size:26px;
+  color:#00f0ff;
+  text-shadow:
+    0 0 10px #00f0ff,
+    0 0 25px #00f0ff;
 }
 
 .producto-info p{
   font-size:15px;
-  margin-bottom:10px;
+  margin-bottom:12px;
+  color:#ffffff;
+  text-shadow:0 0 10px rgba(255,255,255,0.5);
 }
 
 .producto-info h2{
   margin:0;
-  font-size:26px;
-  color:#ffffff;
+  font-size:32px;
+  color:#00ffcc;
+  text-shadow:
+    0 0 15px #00ffcc,
+    0 0 30px #00ffcc;
 }
 
-/* 🟣 CUADRO FUCSIA - BOTÓN */
+/* 🟣 BOTÓN */
 .pedir-box{
-  background:rgba(255,0,150,0.15);
-  backdrop-filter:blur(15px);
-  padding:20px;
-  border-radius:25px;
-  border:1px solid rgba(255,0,200,0.4);
-  margin-bottom:15px;
+  margin-bottom:20px;
 }
 
 .btn-pedir{
   display:inline-block;
-  padding:14px 40px;
-  border-radius:30px;
+  padding:16px 50px;
+  border-radius:40px;
   background:linear-gradient(90deg,#ff00cc,#ff0099);
   color:white;
   font-weight:bold;
   text-decoration:none;
-  font-size:16px;
-  box-shadow:0 0 20px #ff00cc;
+  font-size:17px;
+  box-shadow:
+    0 0 20px #ff00cc,
+    0 0 40px #ff0099;
   transition:0.3s;
 }
 
 .btn-pedir:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 35px #ff00cc;
+  transform:scale(1.08);
+  box-shadow:
+    0 0 40px #ff00cc,
+    0 0 60px #ff0099;
 }
 
-/* Entrega y pago */
+/* 🚀 ENTREGA Y PAGO */
 .beneficios{
   font-weight:bold;
-  font-size:14px;
-  opacity:0.9;
+  font-size:15px;
+  color:#ffffff;
+  text-shadow:
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff;
 }
 
-/* Botón atrás */
+/* BOTÓN ATRÁS */
 .btn-back{
   position:fixed;
   top:20px;
