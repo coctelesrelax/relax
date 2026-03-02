@@ -269,3 +269,105 @@ body.producto-page::before{
   padding:8px 20px;
   border-radius:20px;
 }
+
+/* =========================================
+   🔥 DISEÑO DEFINITIVO PÁGINA PRODUCTO
+========================================= */
+
+body.producto{
+  margin:0;
+  height:100vh;
+  background:url("img/fondo-producto.jpg") no-repeat center center fixed;
+  background-size:cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Poppins', sans-serif;
+  overflow:hidden;
+}
+
+/* CONTENEDOR CENTRAL */
+.producto-wrapper{
+  text-align:center;
+  position:relative;
+}
+
+/* CUADRO AZUL (IMAGEN) */
+.cuadro-azul{
+  width:420px;
+  padding:25px;
+  border-radius:20px;
+  border:3px solid #00f0ff;
+  box-shadow:0 0 40px #00f0ff;
+  margin:0 auto 20px auto;
+  background:rgba(0,0,0,0.6);
+}
+
+.cuadro-azul img{
+  width:100%;
+  border-radius:15px;
+  display:block;
+}
+
+/* CUADRO VERDE (INFO) */
+.cuadro-verde{
+  width:420px;
+  padding:25px;
+  border-radius:20px;
+  border:3px solid #00ff88;
+  box-shadow:0 0 40px #00ff88;
+  margin:0 auto 20px auto;
+  background:rgba(0,0,0,0.7);
+}
+
+.cuadro-verde h2{
+  color:#00f0ff;
+  margin-bottom:10px;
+  letter-spacing:2px;
+}
+
+.cuadro-verde p{
+  opacity:0.9;
+  font-size:14px;
+}
+
+.cuadro-verde .precio{
+  font-size:30px;
+  color:#00ffcc;
+  margin-top:15px;
+}
+
+/* TARIMA FUCSIA (BOTÓN) */
+.tarima{
+  width:420px;
+  padding:20px;
+  border-radius:20px;
+  border:3px solid #ff00ff;
+  box-shadow:0 0 50px #ff00ff;
+  margin:0 auto 15px auto;
+  background:rgba(0,0,0,0.7);
+}
+
+.btn-pedir{
+  display:inline-block;
+  padding:15px 50px;
+  background:#00eaff;
+  color:black;
+  font-weight:bold;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.btn-pedir:hover{
+  transform:scale(1.05);
+}
+
+/* ENTREGA Y PAGO */
+.entrega-info{
+  margin-top:10px;
+  font-size:14px;
+  color:#ffffff;
+  text-shadow:0 0 10px #00f0ff;
+}
