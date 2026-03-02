@@ -371,3 +371,21 @@ body.producto{
   color:#ffffff;
   text-shadow:0 0 10px #00f0ff;
 }
+
+/* === SIN CUADRO NEGRO EN PRODUCTO, SOLO TEXTO SOBRE EL FONDO === */
+body.producto,
+body.producto-page,
+body.producto-layout,
+body.producto-container {
+  background: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Asegura que el fondo se vea sin caja encima */
+body.producto-page::before {
+  background: rgba(0, 0, 0, 0.45) !important;
+}
