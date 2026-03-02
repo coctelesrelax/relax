@@ -164,48 +164,42 @@ body::before{
 }
 
 /* =========================================
-   PÁGINA PRODUCTO (FIJA Y CENTRADA)
+   🔥 PÁGINA PRODUCTO LIMPIA (SIN CUADROS)
 ========================================= */
 
-/* SOLO se activa si el body tiene esta clase */
 body.producto-page{
-  margin:0;
-  padding:0;
-  min-height:100vh;
   background:url("img/fondo-producto.jpg") no-repeat center center fixed;
   background-size:cover;
+  min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  overflow-x:hidden;
+  overflow:hidden;
   position:relative;
 }
 
-/* Overlay oscuro elegante */
+/* Overlay elegante */
 body.producto-page::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.65);
+  background:rgba(0,0,0,0.55);
   z-index:0;
 }
 
-/* Contenedor */
-.producto-container{
+/* Contenedor SIN caja negra */
+body.producto-page .producto-container{
   position:relative;
   z-index:2;
   width:90%;
   max-width:420px;
-  padding:30px;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(15px);
-  border-radius:25px;
-  box-shadow:
-    0 0 40px #00f0ff,
-    inset 0 0 40px rgba(255,0,255,0.3);
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  padding:0;
 }
 
-/* Imagen fija */
+/* Imagen */
 .producto-img-container{
   height:380px;
   display:flex;
@@ -220,30 +214,28 @@ body.producto-page::before{
   object-fit:contain;
 }
 
-/* Títulos */
-.titulo{
+/* Info */
+.producto-info h1{
   font-size:28px;
   color:#00f0ff;
   text-shadow:0 0 15px #00f0ff;
 }
 
-.subtitulo{
-  color:#ff00ff;
-  font-style:italic;
-  margin-bottom:15px;
+.producto-info p{
+  font-size:14px;
+  opacity:0.9;
 }
 
-/* Precio */
-.price{
-  font-size:38px;
-  margin:20px 0;
-  color:#00f0ff;
-  text-shadow:0 0 20px #00f0ff;
+.producto-info h2{
+  font-size:34px;
+  color:#00ffcc;
+  text-shadow:0 0 20px #00ffcc;
 }
 
-/* Botón WhatsApp */
-.btn-neon{
+/* Botón */
+.btn-pedir{
   display:inline-block;
+  margin-top:20px;
   padding:15px 50px;
   background:linear-gradient(90deg,#ff00ff,#00f0ff);
   color:white;
@@ -254,137 +246,29 @@ body.producto-page::before{
   box-shadow:0 0 25px #ff00ff;
 }
 
-.btn-neon:hover{
+.btn-pedir:hover{
   transform:scale(1.05);
   box-shadow:0 0 40px #00f0ff;
 }
 
+/* Beneficios */
+.beneficios{
+  margin-top:15px;
+  font-size:14px;
+  text-shadow:0 0 10px #00f0ff;
+}
+
 /* Botón volver */
 .btn-back{
-  display:inline-block;
-  margin-top:15px;
+  position:absolute;
+  top:20px;
+  left:20px;
   color:white;
   text-decoration:none;
   border:1px solid #00f0ff;
   padding:8px 20px;
   border-radius:20px;
 }
-
-/* =========================================
-   🔥 DISEÑO DEFINITIVO PÁGINA PRODUCTO
-========================================= */
-
-body.producto{
-  margin:0;
-  height:100vh;
-  background:url("img/fondo-producto.jpg") no-repeat center center fixed;
-  background-size:cover;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:'Poppins', sans-serif;
-  overflow:hidden;
-}
-
-/* CONTENEDOR CENTRAL */
-.producto-wrapper{
-  text-align:center;
-  position:relative;
-}
-
-/* CUADRO AZUL (IMAGEN) */
-.cuadro-azul{
-  width:420px;
-  padding:25px;
-  border-radius:20px;
-  border:3px solid #00f0ff;
-  box-shadow:0 0 40px #00f0ff;
-  margin:0 auto 20px auto;
-  background:rgba(0,0,0,0.6);
-}
-
-.cuadro-azul img{
-  width:100%;
-  border-radius:15px;
-  display:block;
-}
-
-/* CUADRO VERDE (INFO) */
-.cuadro-verde{
-  width:420px;
-  padding:25px;
-  border-radius:20px;
-  border:3px solid #00ff88;
-  box-shadow:0 0 40px #00ff88;
-  margin:0 auto 20px auto;
-  background:rgba(0,0,0,0.7);
-}
-
-.cuadro-verde h2{
-  color:#00f0ff;
-  margin-bottom:10px;
-  letter-spacing:2px;
-}
-
-.cuadro-verde p{
-  opacity:0.9;
-  font-size:14px;
-}
-
-.cuadro-verde .precio{
-  font-size:30px;
-  color:#00ffcc;
-  margin-top:15px;
-}
-
-/* TARIMA FUCSIA (BOTÓN) */
-.tarima{
-  width:420px;
-  padding:20px;
-  border-radius:20px;
-  border:3px solid #ff00ff;
-  box-shadow:0 0 50px #ff00ff;
-  margin:0 auto 15px auto;
-  background:rgba(0,0,0,0.7);
-}
-
-.btn-pedir{
-  display:inline-block;
-  padding:15px 50px;
-  background:#00eaff;
-  color:black;
-  font-weight:bold;
-  border-radius:40px;
-  text-decoration:none;
-  font-size:16px;
-  transition:0.3s;
-}
-
-.btn-pedir:hover{
-  transform:scale(1.05);
-}
-
-/* ENTREGA Y PAGO */
-.entrega-info{
-  margin-top:10px;
-  font-size:14px;
-  color:#ffffff;
-  text-shadow:0 0 10px #00f0ff;
-}
-
-/* === SIN CUADRO NEGRO EN PRODUCTO, SOLO TEXTO SOBRE EL FONDO === */
-body.producto,
-body.producto-page,
-body.producto-layout,
-body.producto-container {
-  background: none !important;
-  backdrop-filter: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
 /* Asegura que el fondo se vea sin caja encima */
 body.producto-page::before {
   background: rgba(0, 0, 0, 0.45) !important;
