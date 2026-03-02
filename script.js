@@ -118,4 +118,4 @@ if(canvas){
   animate();
 }
 
-});
+}); 
