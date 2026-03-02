@@ -576,3 +576,9 @@ body.producto{
         height: 300px;
     }
 }
+
+@media (max-width: 768px) {
+  #particles {
+    display: none;
+  }
+}
