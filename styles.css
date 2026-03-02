@@ -1,11 +1,19 @@
+/* =========================================
+   RESET GENERAL
+========================================= */
+
 body{
   margin:0;
   overflow-x:hidden;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:'Poppins', Arial, Helvetica, sans-serif;
   background-color:#000;
   color:white;
   text-align:center;
 }
+
+/* =========================================
+   FONDO PRINCIPAL INDEX
+========================================= */
 
 body::before{
   content:"";
@@ -19,134 +27,103 @@ body::before{
     url("img/bar-fondo.jpg");
   background-size:cover;
   background-position:center;
-  background-attachment: scroll;
   z-index:-2;
 }
 
+/* =========================================
+   HERO
+========================================= */
+
 .hero{
-height:100vh;
-background:url("img/bar-fondo.jpg") center/cover no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
 }
 
 .overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
 }
 
 .hero-content{
-position:relative;
-z-index:2;
+  position:relative;
+  z-index:2;
 }
 
 .logo{
-width:200px;
-filter: drop-shadow(0 0 20px #00eaff);
+  width:200px;
+  filter: drop-shadow(0 0 20px #00eaff);
 }
 
 .sub{
-font-size:20px;
-opacity:0.8;
+  font-size:20px;
+  opacity:0.8;
 }
 
 .entrega{
-color:#00eaff;
-font-weight:bold;
-text-shadow:0 0 10px #00eaff;
+  color:#00eaff;
+  font-weight:bold;
+  text-shadow:0 0 10px #00eaff;
 }
 
+/* =========================================
+   PRODUCTOS GRID
+========================================= */
+
 .productos{
-padding:80px 20px;
+  padding:80px 20px;
 }
 
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-max-width:1000px;
-margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  max-width:1000px;
+  margin:auto;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(0,234,255,0.2);
-border-radius:15px;
-padding:20px;
-transition:0.4s;
-box-shadow:0 0 20px rgba(0,234,255,0.1);
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  border-radius:20px;
+  padding:20px;
+  transition:0.4s ease;
+  border:1px solid rgba(0,255,255,0.2);
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 40px rgba(0,234,255,0.5);
+  transform:translateY(-10px);
+  box-shadow:0 0 25px #00f0ff;
 }
 
 .card img{
-width:100%;
-border-radius:10px;
+  width:100%;
+  border-radius:10px;
 }
 
-.card a{
-display:inline-block;
-margin-top:15px;
-padding:10px 30px;
-background:#00eaff;
-color:black;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
-transition:0.3s;
+.card button{
+  margin-top:15px;
+  padding:10px 30px;
+  background:#00eaff;
+  color:black;
+  border:none;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-.card a:hover{
-background:white;
+.card button:hover{
+  background:white;
 }
 
-.producto-container{
-padding:100px 20px;
-}
-
-.btn-whatsapp{
-margin-top:30px;
-padding:15px 40px;
-background:#00eaff;
-border:none;
-border-radius:30px;
-font-size:18px;
-cursor:pointer;
-box-shadow:0 0 20px #00eaff;
-transition:0.3s;
-}
-
-.btn-whatsapp:hover{
-box-shadow:0 0 40px #00eaff;
-}
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
-  color: white;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 20px;
-  transition: 0.4s ease;
-  border: 1px solid rgba(0,255,255,0.2);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px #00f0ff;
-}
-/* ===== ULTRA CLUB LOGO ===== */
+/* =========================================
+   LOGO NEON EFECTO
+========================================= */
 
 .logo-wrapper{
   position:relative;
@@ -154,7 +131,6 @@ body {
   display:inline-block;
 }
 
-/* ENCENDIDO */
 .logo-principal{
   width:320px;
   max-width:85%;
@@ -162,12 +138,8 @@ body {
   animation:
     logoBoot 1.5s ease forwards,
     logoGlow 3s ease-in-out infinite alternate 1.5s;
-  filter:
-    drop-shadow(0 0 5px #00f0ff)
-    drop-shadow(0 0 15px #00f0ff);
 }
 
-/* REFLEJO */
 .logo-reflejo{
   width:320px;
   max-width:85%;
@@ -177,232 +149,99 @@ body {
   transform:scaleY(-1);
   opacity:0.15;
   mask-image:linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
-  -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
   pointer-events:none;
 }
 
-/* ENCENDIDO INICIAL */
 @keyframes logoBoot{
-  0%{
-    opacity:0;
-    transform:scale(0.8);
-    filter:none;
-  }
-  60%{
-    opacity:1;
-    transform:scale(1.05);
-  }
-  100%{
-    opacity:1;
-    transform:scale(1);
-  }
+  0%{opacity:0; transform:scale(0.8);}
+  60%{opacity:1; transform:scale(1.05);}
+  100%{opacity:1; transform:scale(1);}
 }
 
-/* RESPIRACIÓN NEÓN */
 @keyframes logoGlow{
-  from{
-    filter:
-      drop-shadow(0 0 10px #00f0ff)
-      drop-shadow(0 0 25px #00f0ff)
-      drop-shadow(0 0 40px #00f0ff);
-  }
-  to{
-    filter:
-      drop-shadow(0 0 20px #00f0ff)
-      drop-shadow(0 0 50px #00f0ff)
-      drop-shadow(0 0 80px #00f0ff);
-  }
+  from{filter:drop-shadow(0 0 10px #00f0ff);}
+  to{filter:drop-shadow(0 0 40px #00f0ff);}
 }
- 
-/* ===== FONDO NIGHT CLUB ===== */
-body.producto{
+
+/* =========================================
+   PÁGINA PRODUCTO (FIJA Y CENTRADA)
+========================================= */
+
+/* SOLO se activa si el body tiene esta clase */
+body.producto-page{
   margin:0;
-  height:100vh;
+  padding:0;
+  min-height:100vh;
   background:url("img/fondo-producto.jpg") no-repeat center center fixed;
   background-size:cover;
   display:flex;
-  align-items:center;
   justify-content:center;
-  font-family:Arial, sans-serif;
-}
-
-/* ===== TARIMA ===== */
-.stage{
+  align-items:center;
+  overflow-x:hidden;
   position:relative;
-  padding:40px;
-  border-radius:20px;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(8px);
-  box-shadow:0 0 80px #ff00ff;
 }
 
-/* ===== CARD CENTRAL ===== */
-.card{
-  text-align:center;
-  color:white;
+/* Overlay oscuro elegante */
+body.producto-page::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  z-index:0;
+}
+
+/* Contenedor */
+.producto-container{
+  position:relative;
+  z-index:2;
+  width:90%;
+  max-width:420px;
   padding:30px;
-  border-radius:20px;
-  border:2px solid #00f0ff;
-  box-shadow:0 0 40px #00f0ff, 0 0 80px #ff00ff inset;
-  animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-  from{box-shadow:0 0 20px #00f0ff;}
-  to{box-shadow:0 0 60px #ff00ff;}
-}
-
-.producto-img{
-  width:220px;
-  margin-bottom:20px;
-}
-
-.sub{
-  color:#ff00ff;
-  font-style:italic;
-}
-
-.info p{
-  margin:5px 0;
-  font-size:14px;
-  opacity:0.9;
-}
-
-.price{
-  font-size:40px;
-  color:#00f0ff;
-  margin:20px 0;
-}
-
-/* ===== BOTÓN NEON ===== */
-.btn-buy{
-  display:inline-block;
-  padding:15px 40px;
-  background:linear-gradient(90deg,#ff00ff,#00f0ff);
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:50px;
-  box-shadow:0 0 20px #ff00ff;
-  transition:0.3s;
-}
-
-.btn-buy:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 40px #00f0ff;
-}
-
-/* ===== BOTÓN VOLVER ===== */
-.btn-back{
-  position:absolute;
-  top:20px;
-  left:20px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-/* ===== FONDO ULTRA NIGHT CLUB ===== */
-.ultra-bg{
-  margin:0;
-  height:100vh;
-  background:url("img/fondo-producto.jpg") no-repeat center center fixed;
-  background-size:cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:Arial, sans-serif;
-  overflow:hidden;
-  position:relative;
-}
-
-/* HUMO */
-.smoke-overlay{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:url("https://i.imgur.com/8bKQXcP.png");
-  background-size:cover;
-  opacity:0.08;
-  animation:smokeMove 80s linear infinite;
-  pointer-events:none;
-}
-
-@keyframes smokeMove{
-  from{background-position:0 0;}
-  to{background-position:2000px 0;}
-}
-
-/* CONTENEDOR TARIMA */
-.stage-container{
-  position:relative;
-  padding:60px;
-  border-radius:30px;
-  background:radial-gradient(circle at center, rgba(0,0,0,0.8), rgba(0,0,0,0.95));
-  box-shadow:
-    0 0 60px #ff00ff,
-    0 0 120px #00f0ff,
-    inset 0 0 60px #ff00ff;
-}
-
-/* CARD NEON */
-.neon-card{
-  text-align:center;
-  color:white;
-  padding:40px;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(15px);
   border-radius:25px;
-  border:2px solid #00f0ff;
-  backdrop-filter:blur(10px);
-  background:rgba(0,0,0,0.5);
   box-shadow:
     0 0 40px #00f0ff,
-    0 0 80px #ff00ff inset;
-  animation:glowCard 2s infinite alternate;
+    inset 0 0 40px rgba(255,0,255,0.3);
 }
 
-@keyframes glowCard{
-  from{box-shadow:0 0 30px #00f0ff;}
-  to{box-shadow:0 0 80px #ff00ff;}
-}
-
-/* IMAGEN */
-.producto-img{
-  width:250px;
+/* Imagen fija */
+.producto-img-container{
+  height:380px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   margin-bottom:20px;
-  filter:drop-shadow(0 0 20px #00f0ff);
 }
 
-/* TITULOS */
+.producto-img-container img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+/* Títulos */
 .titulo{
-  font-size:32px;
+  font-size:28px;
   color:#00f0ff;
-  text-shadow:0 0 20px #00f0ff;
+  text-shadow:0 0 15px #00f0ff;
 }
 
 .subtitulo{
   color:#ff00ff;
   font-style:italic;
-  margin-bottom:20px;
-  text-shadow:0 0 15px #ff00ff;
+  margin-bottom:15px;
 }
 
-/* LISTA */
-.includes p{
-  margin:6px 0;
-  opacity:0.9;
-}
-
-/* PRECIO */
+/* Precio */
 .price{
-  font-size:42px;
-  margin:25px 0;
+  font-size:38px;
+  margin:20px 0;
   color:#00f0ff;
-  text-shadow:
-    0 0 10px #00f0ff,
-    0 0 30px #00f0ff;
+  text-shadow:0 0 20px #00f0ff;
 }
 
-/* BOTÓN NEON */
+/* Botón WhatsApp */
 .btn-neon{
   display:inline-block;
   padding:15px 50px;
@@ -411,133 +250,22 @@ body.producto{
   font-weight:bold;
   text-decoration:none;
   border-radius:50px;
-  box-shadow:
-    0 0 20px #ff00ff,
-    0 0 40px #00f0ff;
   transition:0.3s;
+  box-shadow:0 0 25px #ff00ff;
 }
 
 .btn-neon:hover{
-  transform:scale(1.1);
-  box-shadow:
-    0 0 40px #00f0ff,
-    0 0 80px #ff00ff;
+  transform:scale(1.05);
+  box-shadow:0 0 40px #00f0ff;
 }
 
-/* BOTÓN VOLVER */
+/* Botón volver */
 .btn-back{
-  position:absolute;
-  top:25px;
-  left:25px;
+  display:inline-block;
+  margin-top:15px;
   color:white;
-  font-weight:bold;
   text-decoration:none;
-  text-shadow:0 0 10px #00f0ff;
+  border:1px solid #00f0ff;
+  padding:8px 20px;
+  border-radius:20px;
 }
-
-/* =========================================
-   PÁGINA PRODUCTO – FONDO FIJO SIN MOVIMIENTO
-========================================= */
-
-body {
-  margin: 0;
-  padding: 0;
-  background: url("fondo-producto.jpg") no-repeat center center fixed;
-  background-size: cover;
-  overflow-x: hidden;
-}
-
-/* Contenedor principal */
-#detalle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-/* Tarjeta producto */
-#detalle > div,
-#detalle {
-  position: relative;
-}
-
-/* Caja producto estilo vidrio */
-.producto-card {
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 40px;
-  text-align: center;
-  box-shadow: 0 0 40px rgba(0,255,255,0.4);
-  max-width: 400px;
-}
-
-/* Imagen */
-.producto-card img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 20px;
-}
-
-/* Botón WhatsApp */
-.producto-card button {
-  background: linear-gradient(45deg, #00ffff, #00ff88);
-  border: none;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.producto-card button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #00ffff;
-}
-
-/* =========================================
-   ESTILO TARJETA PRODUCTO
-========================================= */
-
-#detalle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.producto-card {
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 40px;
-  text-align: center;
-  box-shadow: 0 0 40px rgba(0,255,255,0.4);
-  max-width: 420px;
-}
-
-.producto-card img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 20px;
-}
-
-.btn-wsp {
-  background: linear-gradient(45deg, #00ffff, #00ff88);
-  border: none;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-.btn-volver {
-  background: transparent;
-  border: 1px solid #00ffff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  margin-top: 15px;
-  cursor: pointer;
-} 
