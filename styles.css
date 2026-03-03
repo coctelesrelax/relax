@@ -399,3 +399,82 @@ body.producto-page .producto-container{
   transform:scale(1.05);
   box-shadow:0 0 60px #00f0ff;
 } 
+
+/* =========================================
+   BADGE FLOTANTE
+========================================= */
+
+.relax-badge{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:rgba(0,0,0,0.7);
+  padding:15px 20px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 25px #00ff66;
+  z-index:999;
+  animation:pulseBadge 2s infinite alternate;
+}
+
+.badge-stars{
+  color:#ffd700;
+  font-size:18px;
+}
+
+@keyframes pulseBadge{
+  from{box-shadow:0 0 15px #00ff66;}
+  to{box-shadow:0 0 35px #00ff66;}
+}
+
+/* =========================================
+   CARRUSEL RESEÑAS
+========================================= */
+
+.carousel{
+  overflow:hidden;
+  width:100%;
+  max-width:1000px;
+  margin:60px auto 0;
+}
+
+.carousel-track{
+  display:flex;
+  gap:30px;
+  animation:scrollReviews 25s linear infinite;
+}
+
+@keyframes scrollReviews{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+.review-card{
+  min-width:280px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  padding:25px;
+  border-radius:20px;
+  border:1px solid rgba(255,0,255,0.3);
+  transition:0.4s;
+}
+
+.review-card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 30px #ff00ff;
+}
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
