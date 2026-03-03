@@ -6,8 +6,6 @@
 <title>RE-LAX Club</title>
 
 <link rel="icon" href="favicon.png">
-<link rel="shortcut icon" href="favicon.png">
-
 <link rel="stylesheet" href="styles.css">
 
 <style>
@@ -20,7 +18,7 @@ body{
   text-align:center;
 }
 
-/* ===== PARTÍCULAS ===== */
+/* PARTÍCULAS */
 canvas{
   position:fixed;
   top:0;
@@ -30,17 +28,14 @@ canvas{
   z-index:-1;
 }
 
-/* ===== LOGO ===== */
+/* LOGO */
 .logo-wrapper{
   margin-top:40px;
-  position:relative;
 }
-
 .logo-principal{
   width:220px;
   max-width:80%;
 }
-
 .logo-reflejo{
   width:220px;
   max-width:80%;
@@ -50,7 +45,7 @@ canvas{
   filter:blur(3px);
 }
 
-/* ===== PRODUCTOS ===== */
+/* PRODUCTOS */
 #productos{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -66,24 +61,26 @@ canvas{
   transition:0.4s;
   border:1px solid rgba(0,255,255,0.3);
 }
-
 .card:hover{
   transform:translateY(-12px) scale(1.03);
   box-shadow:0 0 30px #00f0ff;
 }
-
 .card img{
   width:100%;
   border-radius:15px;
 }
 
-/* 🔥 PRECIO VERDE NEÓN PRO */
-.card h4{
-  color:#00ff66;
+/* PRECIO NEÓN VERDE PRO */
+.card h3 + p,
+.price{
+  color:#39ff14;
   font-size:22px;
   font-weight:bold;
-  text-shadow:0 0 15px #00ff66;
-  margin-top:10px;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #00ff88,
+    0 0 40px #00ff88;
 }
 
 /* BOTONES */
@@ -98,54 +95,124 @@ button{
   margin-top:10px;
 }
 
-/* ===== TOP VENTAS ===== */
+/* EXPERIENCIA */
+.relax-experiencia{
+  padding:60px 20px;
+}
+.relax-titulo{
+  font-size:28px;
+  margin-bottom:40px;
+  color:#00f0ff;
+}
+.relax-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-bottom:50px;
+}
+.relax-card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:15px;
+  backdrop-filter:blur(10px);
+}
+
+/* CONTADOR */
+.relax-stats{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  flex-wrap:wrap;
+  margin-bottom:60px;
+}
+.relax-stats h3{
+  font-size:32px;
+  color:#39ff14;
+}
+
+/* TOP VENTAS */
 .relax-top{
   padding:60px 20px;
 }
-
-.relax-titulo{
-  font-size:28px;
-  color:#00f0ff;
-  margin-bottom:40px;
-  text-shadow:0 0 15px #00f0ff;
-}
-
 .top-grid{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:25px;
 }
-
 .top-card{
-  width:180px;
   background:rgba(255,255,255,0.05);
-  border-radius:20px;
-  padding:15px;
-  border:1px solid rgba(0,255,255,0.3);
-  backdrop-filter:blur(10px);
-  transition:0.3s;
+  padding:20px;
+  border-radius:15px;
 }
-
-.top-card:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #00f0ff;
-}
-
 .top-card img{
   width:120px;
   height:120px;
   object-fit:contain;
+}
+.top-price{
+  display:block;
+  margin-top:10px;
+  color:#39ff14;
+  font-weight:bold;
+  text-shadow:0 0 10px #39ff14;
+}
+
+/* RESEÑAS */
+.relax-reviews{
+  padding:60px 20px;
+}
+.carousel{
+  overflow:hidden;
+}
+.carousel-track{
+  display:flex;
+  gap:30px;
+  animation:scroll 20s linear infinite;
+}
+.review-card{
+  min-width:250px;
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:15px;
+}
+.stars{
+  color:#FFD700;
   margin-bottom:10px;
 }
-
-.top-price{
-  color:#00ff66;
-  font-weight:bold;
-  text-shadow:0 0 12px #00ff66;
+@keyframes scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
 }
 
-/* ===== WHATSAPP ===== */
+/* BOTÓN FINAL */
+.relax-cta-final{
+  display:inline-block;
+  margin:60px 0;
+  padding:15px 35px;
+  background:#39ff14;
+  color:black;
+  font-weight:bold;
+  border-radius:30px;
+  text-decoration:none;
+  box-shadow:0 0 20px #39ff14;
+}
+
+/* BADGE */
+.relax-badge{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#000;
+  padding:15px;
+  border-radius:15px;
+  border:1px solid #39ff14;
+  font-size:14px;
+}
+.badge-stars{
+  color:#FFD700;
+}
+
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -166,71 +233,119 @@ button{
 <canvas id="particles"></canvas>
 
 <div class="logo-wrapper">
-  <img src="img/logo.png" class="logo-principal" alt="RE-LAX Logo" loading="lazy">
-  <img src="img/logo.png" class="logo-reflejo" alt="">
+  <img src="img/logo.png" class="logo-principal">
+  <img src="img/logo.png" class="logo-reflejo">
 </div>
 
 <div id="productos"></div>
-
-<!-- =========================
-     EXPERIENCIA RE-LAX
-========================= -->
-
-<section class="relax-experiencia">
-
-  <h2 class="relax-titulo">¿POR QUÉ ELEGIR RE-LAX?</h2>
-
-  <div class="relax-stats">
-    <div>
-      <h3 class="counter" data-target="352">0</h3>
-      <p>Pedidos Entregados</p>
-    </div>
-    <div>
-      <h3 class="counter" data-target="98">0</h3>
-      <p>% Clientes Satisfechos</p>
-    </div>
-    <div>
-      <h3 class="counter" data-target="5">0</h3>
-      <p>⭐ Calificación Promedio</p>
-    </div>
-  </div>
-
-</section>
-
-<!-- 🔥 TOP VENTAS AHORA VA AQUÍ (DESPUÉS DEL CONTADOR) -->
-
-<section class="relax-top">
-
-  <h2 class="relax-titulo">🔥 TOP VENTAS RE-LAX</h2>
-
-  <div class="top-grid">
-
-    <div class="top-card">
-      <img src="img/gin-selva.png">
-      <h3>Gin Selva</h3>
-      <span class="top-price">$45.000</span>
-    </div>
-
-    <div class="top-card">
-      <img src="img/jager-bull.png">
-      <h3>Jager Bull</h3>
-      <span class="top-price">$42.000</span>
-    </div>
-
-    <div class="top-card">
-      <img src="img/hechizo-violeta.png">
-      <h3>Hechizo Violeta</h3>
-      <span class="top-price">$48.000</span>
-    </div>
-
-  </div>
-
-</section>
 
 <a href="https://wa.me/573132659873" class="whatsapp" target="_blank">💬</a>
 
 <script src="data.js" defer></script>
 <script src="script.js" defer></script>
+
+<!-- EXPERIENCIA -->
+<section class="relax-experiencia">
+
+<h2 class="relax-titulo">¿POR QUÉ ELEGIR RE-LAX?</h2>
+
+<div class="relax-grid">
+<div class="relax-card">
+<h3>🍸 Cócteles Premium</h3>
+<p>Mezclas exclusivas y presentación impactante.</p>
+</div>
+
+<div class="relax-card">
+<h3>🚀 Entrega Express</h3>
+<p>Llevamos la fiesta hasta tu puerta.</p>
+</div>
+
+<div class="relax-card">
+<h3>💵 Pago Contraentrega</h3>
+<p>Paga al recibir tu pedido.</p>
+</div>
+
+<div class="relax-card">
+<h3>🔥 Experiencia Única</h3>
+<p>Creamos momentos inolvidables.</p>
+</div>
+</div>
+
+<div class="relax-stats">
+<div><h3 class="counter" data-target="352">0</h3><p>Pedidos</p></div>
+<div><h3 class="counter" data-target="98">0</h3><p>% Satisfacción</p></div>
+<div><h3 class="counter" data-target="5">0</h3><p>⭐ Promedio</p></div>
+</div>
+
+</section>
+
+<!-- TOP VENTAS (AHORA AQUÍ) -->
+<section class="relax-top">
+
+<h2 class="relax-titulo">🔥 TOP VENTAS RE-LAX</h2>
+
+<div class="top-grid">
+
+<div class="top-card">
+<img src="img/gin-selva.png">
+<h3>Gin Selva</h3>
+<span class="top-price">$45.000</span>
+</div>
+
+<div class="top-card">
+<img src="img/jager-bull.png">
+<h3>Jager Bull</h3>
+<span class="top-price">$42.000</span>
+</div>
+
+<div class="top-card">
+<img src="img/hechizo-violeta.png">
+<h3>Hechizo Violeta</h3>
+<span class="top-price">$48.000</span>
+</div>
+
+</div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="relax-reviews">
+
+<h2 class="relax-titulo">LO QUE DICEN NUESTROS CLIENTES</h2>
+
+<div class="carousel">
+<div class="carousel-track">
+
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>"La presentación es brutal. Llegó rápido y el sabor increíble."</p>
+<span>- Laura M.</span>
+</div>
+
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>"Perfecto para fiestas. RE-LAX nunca falla 🔥"</p>
+<span>- Daniel R.</span>
+</div>
+
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>"Se ve premium, sabe premium. Totalmente recomendado."</p>
+<span>- Camila P.</span>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<a href="https://wa.me/573132659873" target="_blank" class="relax-cta-final">
+PEDIR AHORA POR WHATSAPP
+</a>
+
+<div class="relax-badge">
+<div class="badge-stars">★★★★★</div>
+<span>4.9/5 • +352 clientes felices</span>
+</div>
 
 </body>
 </html>
