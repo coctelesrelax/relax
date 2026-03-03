@@ -13,9 +13,9 @@ body{
 
 /* =========================================
    FONDO PRINCIPAL INDEX
+   (NO AFECTA PRODUCTO)
 ========================================= */
 
-/* SOLO aplica al index */
 body:not(.producto-page)::before{
   content:"";
   position:fixed;
@@ -57,7 +57,7 @@ body:not(.producto-page)::before{
 
 .logo{
   width:200px;
-  filter: drop-shadow(0 0 20px #00eaff);
+  filter: drop-shadow(0 0 25px #00f0ff);
 }
 
 .sub{
@@ -67,7 +67,8 @@ body:not(.producto-page)::before{
 
 .entrega{
   color:#00ff88;
-  text-shadow:0 0 10px #00ff88;
+  font-weight:bold;
+  text-shadow:0 0 12px #00ff88;
 }
 
 /* =========================================
@@ -86,6 +87,8 @@ body:not(.producto-page)::before{
   margin:auto;
 }
 
+/* ===== NUEVO ESTILO CUADROS NEÓN ===== */
+
 .card{
   background:rgba(0,0,0,0.6);
   backdrop-filter:blur(12px);
@@ -98,7 +101,8 @@ body:not(.producto-page)::before{
 
 .card:hover{
   transform:translateY(-10px);
-  box-shadow:0 0 25px #00f0ff;
+  box-shadow:0 0 40px #ff00ff;
+  border-color:#ff00ff;
 }
 
 .card img{
@@ -108,18 +112,20 @@ body:not(.producto-page)::before{
 
 .card button{
   margin-top:15px;
-  padding:10px 30px;
-  background:#00eaff;
-  color:black;
+  padding:12px 35px;
+  background:linear-gradient(90deg,#ff00ff,#00f0ff);
+  color:white;
   border:none;
-  border-radius:30px;
+  border-radius:40px;
   font-weight:bold;
   cursor:pointer;
   transition:0.3s;
+  box-shadow:0 0 20px #ff00ff;
 }
 
 .card button:hover{
-  background:white;
+  transform:scale(1.05);
+  box-shadow:0 0 35px #00f0ff;
 }
 
 /* =========================================
@@ -165,7 +171,7 @@ body:not(.producto-page)::before{
 }
 
 /* =========================================
-   🔥 PÁGINA PRODUCTO PERFECTAMENTE CENTRADA
+   PÁGINA PRODUCTO (NO SE TOCA ESTRUCTURA)
 ========================================= */
 
 body.producto-page{
@@ -173,16 +179,13 @@ body.producto-page{
   min-height:100vh;
   background:url("img/fondo-producto.jpg") no-repeat center center fixed;
   background-size:cover;
-
   display:flex;
   justify-content:center;
   align-items:center;
-
   position:relative;
   overflow:hidden;
 }
 
-/* Overlay SOLO producto */
 body.producto-page::before{
   content:"";
   position:absolute;
@@ -191,7 +194,6 @@ body.producto-page::before{
   z-index:0;
 }
 
-/* CONTENEDOR CENTRADO REAL */
 body.producto-page .producto-container{
   position:relative;
   z-index:2;
@@ -200,7 +202,6 @@ body.producto-page .producto-container{
   text-align:center;
 }
 
-/* Imagen */
 .producto-img-container{
   height:380px;
   display:flex;
@@ -215,7 +216,6 @@ body.producto-page .producto-container{
   object-fit:contain;
 }
 
-/* Info */
 .producto-info h1{
   font-size:28px;
   color:#00f0ff;
@@ -236,7 +236,6 @@ body.producto-page .producto-container{
   margin:10px 0 15px 0;
 }
 
-/* Botón */
 .btn-pedir{
   display:inline-block;
   margin-top:10px;
@@ -255,14 +254,12 @@ body.producto-page .producto-container{
   box-shadow:0 0 40px #00f0ff;
 }
 
-/* Beneficios */
 .beneficios{
   margin-top:12px;
   font-size:14px;
   text-shadow:0 0 10px #00f0ff;
 }
 
-/* Botón volver */
 .btn-back{
   position:absolute;
   top:20px;
