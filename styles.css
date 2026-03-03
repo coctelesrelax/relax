@@ -555,3 +555,22 @@ body.producto-page .producto-container{
              radial-gradient(circle at 80% 70%, rgba(255,0,255,0.2), transparent 40%);
   z-index:-1;
 }
+
+/* =========================================
+   PRECIO VERDE NEÓN - INDEX
+========================================= */
+
+/* Si el precio está en un span dentro de la card */
+.card span{
+  color:#00ff66 !important;
+  font-weight:bold;
+  font-size:20px;
+  text-shadow:0 0 12px #00ff66;
+}
+
+/* Si el precio está en un párrafo */
+.card p{
+  color:#00ff66;
+  font-weight:bold;
+  text-shadow:0 0 12px #00ff66;
+}
