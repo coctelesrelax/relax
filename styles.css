@@ -15,7 +15,8 @@ body{
    FONDO PRINCIPAL INDEX
 ========================================= */
 
-body::before{
+/* SOLO aplica al index */
+body:not(.producto-page)::before{
   content:"";
   position:fixed;
   top:0;
@@ -164,39 +165,39 @@ body::before{
 }
 
 /* =========================================
-   🔥 PÁGINA PRODUCTO LIMPIA (SIN CUADROS)
+   🔥 PÁGINA PRODUCTO PERFECTAMENTE CENTRADA
 ========================================= */
 
 body.producto-page{
+  margin:0;
+  min-height:100vh;
   background:url("img/fondo-producto.jpg") no-repeat center center fixed;
   background-size:cover;
-  min-height:100vh;
+
   display:flex;
   justify-content:center;
   align-items:center;
-  overflow:hidden;
+
   position:relative;
+  overflow:hidden;
 }
 
-/* Overlay elegante */
+/* Overlay SOLO producto */
 body.producto-page::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.55);
+  background:rgba(0,0,0,0.45);
   z-index:0;
 }
 
-/* Contenedor SIN caja negra */
+/* CONTENEDOR CENTRADO REAL */
 body.producto-page .producto-container{
   position:relative;
   z-index:2;
   width:90%;
   max-width:420px;
-  background:transparent;
-  box-shadow:none;
-  backdrop-filter:none;
-  padding:0;
+  text-align:center;
 }
 
 /* Imagen */
@@ -205,7 +206,7 @@ body.producto-page .producto-container{
   display:flex;
   justify-content:center;
   align-items:center;
-  margin-bottom:20px;
+  margin-bottom:15px;
 }
 
 .producto-img-container img{
@@ -219,24 +220,27 @@ body.producto-page .producto-container{
   font-size:28px;
   color:#00f0ff;
   text-shadow:0 0 15px #00f0ff;
+  margin:10px 0 5px 0;
 }
 
 .producto-info p{
   font-size:14px;
   opacity:0.9;
+  margin:5px 0;
 }
 
 .producto-info h2{
   font-size:34px;
   color:#00ffcc;
   text-shadow:0 0 20px #00ffcc;
+  margin:10px 0 15px 0;
 }
 
 /* Botón */
 .btn-pedir{
   display:inline-block;
-  margin-top:20px;
-  padding:15px 50px;
+  margin-top:10px;
+  padding:14px 45px;
   background:linear-gradient(90deg,#ff00ff,#00f0ff);
   color:white;
   font-weight:bold;
@@ -253,7 +257,7 @@ body.producto-page .producto-container{
 
 /* Beneficios */
 .beneficios{
-  margin-top:15px;
+  margin-top:12px;
   font-size:14px;
   text-shadow:0 0 10px #00f0ff;
 }
@@ -268,8 +272,5 @@ body.producto-page .producto-container{
   border:1px solid #00f0ff;
   padding:8px 20px;
   border-radius:20px;
-}
-/* Asegura que el fondo se vea sin caja encima */
-body.producto-page::before {
-  background: rgba(0, 0, 0, 0.45) !important;
+  z-index:3;
 }
