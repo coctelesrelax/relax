@@ -9,142 +9,110 @@
 
 <style>
 
-/* ===== BODY PRODUCTO ===== */
+/* ===== ACTIVA MODO PRODUCTO ===== */
 body.producto-page{
   margin:0;
-  height:100vh;
+  min-height:100vh;
   background:url("img/fondo-producto.jpg") center/cover no-repeat fixed;
-  font-family:'Poppins', sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   position:relative;
   overflow:hidden;
   color:white;
 }
 
-/* Overlay */
+/* Overlay oscuro elegante */
 body.producto-page::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.55);
+  background:rgba(0,0,0,0.45);
   z-index:0;
 }
 
-/* Botón atrás */
-.btn-back{
-  position:absolute;
-  top:20px;
-  left:20px;
-  padding:8px 18px;
-  border:2px solid #00f0ff;
-  color:#00f0ff;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:25px;
-  z-index:5;
-}
-
-/* CONTENEDOR CENTRAL */
+/* CONTENEDOR PERFECTAMENTE CENTRADO */
 .producto-container{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:95%;
-  max-width:460px;
-  text-align:center;
+  position:relative;
   z-index:2;
+  width:90%;
+  max-width:420px;
+  text-align:center;
 }
 
-/* ===============================
-   🔵 CUADRO AZUL (IMAGEN)
-=================================*/
-.cuadro-azul{
-  padding:30px;
-  border-radius:25px;
-  border:3px solid #00f0ff;
-  box-shadow:
-    0 0 25px #00f0ff,
-    0 0 60px rgba(0,255,255,0.5);
-  background:rgba(0,0,0,0.6);
-  margin-bottom:25px;
-}
-
-.cuadro-azul img{
-  width:80%;
-  max-height:300px;
-  object-fit:contain;
-}
-
-/* ===============================
-   🟢 CUADRO VERDE (INFO)
-=================================*/
-.cuadro-verde{
-  padding:25px;
-  border-radius:25px;
-  border:3px solid #00ff88;
-  box-shadow:
-    0 0 25px #00ff88,
-    0 0 60px rgba(0,255,136,0.5);
-  background:rgba(0,0,0,0.7);
-  margin-bottom:25px;
-}
-
-.cuadro-verde h1{
-  font-size:26px;
-  color:#00f0ff;
-  text-shadow:0 0 12px #00f0ff;
-  margin:0 0 10px 0;
-}
-
-.cuadro-verde p{
-  font-size:14px;
-  opacity:0.9;
-  margin:0 0 15px 0;
-}
-
-.cuadro-verde h2{
-  font-size:32px;
-  color:#00ffcc;
-  text-shadow:0 0 20px #00ffcc;
-  margin:0;
-}
-
-/* ===============================
-   🟣 BASE FUCSIA (BOTÓN)
-=================================*/
-.cuadro-fucsia{
-  padding:20px;
-  border-radius:40px;
-  border:3px solid #ff00cc;
-  box-shadow:
-    0 0 30px #ff00cc,
-    0 0 70px rgba(255,0,204,0.6);
-  background:rgba(0,0,0,0.65);
+/* Imagen */
+.producto-img-container{
+  height:360px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   margin-bottom:15px;
 }
 
+.producto-img-container img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+/* Info */
+.producto-info h1{
+  font-size:28px;
+  color:#00f0ff;
+  text-shadow:0 0 15px #00f0ff;
+  margin:5px 0;
+}
+
+.producto-info p{
+  font-size:14px;
+  opacity:0.9;
+  margin:5px 0;
+}
+
+.producto-info h2{
+  font-size:34px;
+  color:#00ffcc;
+  text-shadow:0 0 20px #00ffcc;
+  margin:10px 0 15px 0;
+}
+
+/* Botón */
 .btn-pedir{
   display:inline-block;
   padding:14px 45px;
-  background:linear-gradient(90deg,#ff00cc,#00f0ff);
-  border-radius:40px;
-  font-size:17px;
-  text-decoration:none;
+  background:linear-gradient(90deg,#ff00ff,#00f0ff);
   color:white;
   font-weight:bold;
-  box-shadow:0 0 25px #ff00cc;
+  text-decoration:none;
+  border-radius:50px;
   transition:0.3s;
+  box-shadow:0 0 25px #ff00ff;
+  margin-top:10px;
 }
 
 .btn-pedir:hover{
   transform:scale(1.05);
+  box-shadow:0 0 40px #00f0ff;
 }
 
-/* BENEFICIOS */
+/* Beneficios */
 .beneficios{
+  margin-top:12px;
   font-size:14px;
   text-shadow:0 0 10px #00f0ff;
-  opacity:0.9;
+}
+
+/* Botón volver */
+.btn-back{
+  position:absolute;
+  top:20px;
+  left:20px;
+  color:white;
+  text-decoration:none;
+  border:1px solid #00f0ff;
+  padding:8px 20px;
+  border-radius:20px;
+  z-index:3;
 }
 
 </style>
@@ -156,26 +124,20 @@ body.producto-page::before{
 
 <div class="producto-container">
 
-  <!-- 🔵 IMAGEN -->
-  <div class="cuadro-azul">
+  <div class="producto-img-container">
     <img id="producto-imagen" alt="Producto RE-LAX">
   </div>
 
-  <!-- 🟢 INFO -->
-  <div class="cuadro-verde">
+  <div class="producto-info">
     <h1 id="producto-nombre"></h1>
     <p id="producto-descripcion"></p>
     <h2 id="producto-precio"></h2>
   </div>
 
-  <!-- 🟣 PEDIR -->
-  <div class="cuadro-fucsia">
-    <a id="btn-whatsapp" target="_blank" class="btn-pedir">
-      PEDIR AHORA
-    </a>
-  </div>
+  <a id="btn-whatsapp" target="_blank" class="btn-pedir">
+    PEDIR AHORA
+  </a>
 
-  <!-- BENEFICIOS -->
   <div class="beneficios">
     🚀 Entrega Express<br>
     💵 Pago Contraentrega
